@@ -17,7 +17,7 @@
 <input type="text" placeholder="Apellido"></input><br><br>
 <input type="number" placeholder="Numéro a apostar" max="100"></input><br><br>
 <input type="number" placeholder="Dinero a apostar" max="100"></input><br><br>
-<label >Tipo de Tiempos:</label><br><br>
+<label >Tiempos:  </label>
     <select >
         <option >Ticos</option>
         <option >Nica</option>
