@@ -13,5 +13,19 @@ En casos se cierra la banca por x razón
 
 Reventa de numeros tipo filialles compartiendo la banca
 
+--------------------------------------------------------------///
+Distribución del Brete:
+
+1 Modulo Ingresar Cliente  //Roy
+2 Login // ROy  
+3 Modulo venta //Bernal
+4 Imprimir un tiquete //Bernal
+5 Modulo Tabla de estado   //Bossa
+6 Tabla de sorteo    //Bossa
+7 Tabla de ganadores // Bossa
+
+
+
+
 
 
