@@ -5,50 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto de Progra 4</title>
-<link rel="stylesheet" href="public/css/style.css">    
-</head>
-
+    
     <h2>Juego de Tiempos prueba 1</h2>
 
-    <h4>Gana Gana !!</h4>
+    <h4>Ingreso de jugadores</h4>
 
-    <div class="cont-princ">
- <div class="form-general">
-   <form action="public/php/registGamer.php">
-   <label><b>Registro de jugadores:</b></label><br><br> 
-   <input type="text" placeholder="Nombre"></input><br><br>
-   <input type="text" placeholder="Apellido"></input><br><br>
-   <input type="number" placeholder="Cédula"></input><br><br>
-   <input type="number" placeholder="Teléfono"></input><br><br>
-   <input type="submit" value="Registrar"></input>
+    <div>
+<form action="public/php/registGamer.php">
+<label for=""></label>
+<input type="text" placeholder="Nombre"></input><br><br>
+<input type="text" placeholder="Apellido"></input><br><br>
+<input type="number" placeholder="Numéro a apostar" max="100"></input><br><br>
+<input type="number" placeholder="Dinero a apostar" max="100"></input><br><br>
+<label >Tiempos:  </label>
+    <select >
+        <option >Ticos</option>
+        <option >Nica</option>
+        <option >Panameños</option>
+    </select><br><br><br>
 
-  </form>
-</div> 
+<input type="submit" value="Registrar"></input>
 
-<div class="tabla-gamers">
-
-
-<table >
-<caption>Lista de jugadores</caption>
-<tr> <th>Nombre</th> <th>Apellido</th> <th>Cédula</th> <th>Teléfono</th>
-</tr>
-<tr> <td>Arándano</td> <td>49</td> <td>0.2</td>
-</tr>
-<tr> <td>Plátano</td> <td>90</td> <td>0.3</td>
-</tr>
-<tr> <td>Cereza</td> <td>46</td> <td>0.4</td>
-</tr>
-<tr> <td>Fresa</td> <td>37</td> <td>0.5</td>
-</tr>
-</table>
-
-
-</div> 
-
-
-
-
-</div>   
+</form>
+    </div>
+</head>
 <body>
     
 </body>
