@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="public/css/style.css">    
 </head>
 
-    <h2>Juego de Tiempos</h2>
+    <h2>Juego de Tiempos prueba 1</h2>
 
     <h4>Gana Gana !!</h4>
 
