@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +20,13 @@
  <div class="container-game">
 
     <nav class="navbar">
-
+        
         <a href="index.php"><button class="nav-link" role="button"><span class="text" >Home</span></button></a>
-        <a href="registrar-sorteo.php"><button class="nav-link" role="button"><span class="text" >Registro de Sorteos</span></button></a>
-        <a href="registrar-jugador.php"><button class="nav-link" role="button"><span class="text" >Registrar Jugador</span></button></a>
         <a href="venta-de-tiempos.php"><button class="nav-link" role="button"><span class="text">Venta de Tiempos</span></button></a>
-        <a href="panel-de-juego.php"><button class="nav-link" role="button"><span class="text">Panel del juego</span></button></a>
+        <a href="registrar-jugador.php"><button class="nav-link" role="button"><span class="text" >Registrar Jugador</span></button></a>
+        <a href="registrar-sorteo.php"><button class="nav-link" role="button"><span class="text" >Registro de Sorteos</span></button></a>
+        <a href="limites-de-apuesta.php"><button class="nav-link" role="button"><span class="text" >Límites de Apuesta</span></button></a>
+        <a href="panel-de-juego.php"><button class="nav-link" role="button"><span class="text">Panel del Juego</span></button></a>
         <a href="log-out.php"><button class="nav-link" role="button"><span class="text">Log Out</span></button></a>
         
     </nav>

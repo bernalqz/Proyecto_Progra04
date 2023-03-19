@@ -1,0 +1,1 @@
+Accion registrar jugador vacía

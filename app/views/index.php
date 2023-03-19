@@ -1,6 +1,7 @@
    <?php include "header.php"?>
-
-    Bienbenido al juego
-    Esto es el index
-
+   <div class="title-head">  
+<h2>
+    Bienvenido al juego Esto es el Index
+    </h2>    
+</div> 
     <?php include "footer.php"?>

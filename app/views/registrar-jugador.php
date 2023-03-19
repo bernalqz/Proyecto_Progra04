@@ -1,23 +1,25 @@
 
 <?php include "header.php"?>
 
+<div class="title-head">  
+<h2>Crear Jugador</h2>    
+</div> 
 
- <div>
-<form action="public/php/registGamer.php">
+<div>
+<form action="../../assets/php/registrar_jugador.php">
 <label for=""></label>
 <input type="text" placeholder="Nombre"></input><br><br>
 <input type="text" placeholder="Apellido"></input><br><br>
-<input type="number" placeholder="Numéro a apostar" max="100"></input><br><br>
-<input type="number" placeholder="Dinero a apostar" max="100"></input><br><br>
-<label >Tiempos:  </label>
-    <select >
-        <option >Ticos</option>
-        <option >Nica</option>
-        <option >Panameños</option>
-    </select><br><br><br>
+<input type="number" placeholder="Cédula"></input><br><br>
+<input type="text" placeholder="Apodo"></input><br><br>
 
-<input type="submit" value="Registrar"></input>
+
+    </select><br><br>
+
+<input type="submit" class="nav-link" value="Registrar"></input>
 
 </form>
-    </div>
+</div>
+
+
     <?php include "footer.php"?>

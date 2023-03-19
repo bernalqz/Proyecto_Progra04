@@ -1,0 +1,1 @@
+Acción venta vacía
