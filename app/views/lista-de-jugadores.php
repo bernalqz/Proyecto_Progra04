@@ -1,5 +1,7 @@
 <?php include "header.php"?>
 
-Aqui iría la tabla con la lista de los jugadores
+
+Lista
+
 
 <?php include "footer.php"?>

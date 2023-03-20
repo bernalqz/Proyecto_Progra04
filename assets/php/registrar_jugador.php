@@ -1,5 +1,5 @@
 <?php
-    //Recepción de los datos del formulario
+
     if (isset($_POST)){
     $Nombre = $_POST['Nombre'];
     $Apodo = $_POST['Apodo'];
