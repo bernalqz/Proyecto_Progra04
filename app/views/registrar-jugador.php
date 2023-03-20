@@ -1,18 +1,17 @@
 
 <?php include "header.php"?>
 
+
 <div class="title-head">  
 <h2>Crear Jugador</h2>    
 </div> 
 
 <div>
-<form action="../../assets/php/registrar_jugador.php">
+<form action="../../assets/php/registrar_jugador.php" method="POST">
 <label for=""></label>
-<input type="text" placeholder="Nombre"></input><br><br>
-<input type="text" placeholder="Apellido"></input><br><br>
-<input type="number" placeholder="Cédula"></input><br><br>
-<input type="text" placeholder="Apodo"></input><br><br>
-
+<input type="text" name="Nombre" placeholder="Nombre"></input><br><br>
+<input type="text" name="Apodo" placeholder="Apodo"></input><br><br>
+<input type="number" name="Cedula" placeholder="Cédula"></input><br><br>
 
     </select><br><br>
 

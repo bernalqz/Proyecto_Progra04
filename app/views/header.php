@@ -9,10 +9,6 @@
     <title>El Juego de los tiempos</title>
 </head>
 <body>
-
-
-
-
 <div class="container">
 <div class="title-head">  
 <h2>EL JUEGO DE LOS TIEMPOS</h2>    
@@ -26,6 +22,7 @@
         <a href="registrar-jugador.php"><button class="nav-link" role="button"><span class="text" >Registrar Jugador</span></button></a>
         <a href="registrar-sorteo.php"><button class="nav-link" role="button"><span class="text" >Registro de Sorteos</span></button></a>
         <a href="limites-de-apuesta.php"><button class="nav-link" role="button"><span class="text" >Límites de Apuesta</span></button></a>
+        <a href="lista-de-jugadores.php"><button class="nav-link" role="button"><span class="text">Lista de Jugadores</span></button></a>
         <a href="panel-de-juego.php"><button class="nav-link" role="button"><span class="text">Panel del Juego</span></button></a>
         <a href="log-out.php"><button class="nav-link" role="button"><span class="text">Log Out</span></button></a>
         

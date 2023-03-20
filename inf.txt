@@ -13,4 +13,58 @@ En casos se cierra la banca por x razón
 
 Reventa de numeros tipo filialles compartiendo la banca
 
+---------------------------------
+
+Base de datos: proyecto_progra04
+
+Tablas:
+
+1. usuarios
+Id_usser  <PK>
+Name_usser
+Email_usser
+Pass_usser
+Time_usser
+
+2. sorteos
+Id_raffle <PK>
+Name_raffle
+Times_raffle
+Max_raffle
+Min_raffle
+Time_raffle
+
+
+3. jugadores
+Id_gamer <PK>
+Name_gamer
+Nick_gamer
+Ced_gamer
+Time_gamer
+
+4. ventas
+Id_sales <PK>
+Id_gamer_sales <FK>
+Id_usser_sales <FK>
+Id_bet_sales   
+Time_sale
+
+5.apuestas
+Id_sales_bet  <FK>
+Id_raffle_bet <FK>
+Id_number_bet <FK>
+Money_bet
+Time_bet
+
+6.numeros
+Id_number <PK>
+Id_usser_number <FK>
+Id_raffle_number <FK>
+Number_number
+Maxbet_number
+Minbet_number
+Time_number
+
+
+
 
