@@ -11,7 +11,7 @@
 <label for=""></label>
 <input type="text" name="Nombre" placeholder="Nombre"></input><br><br>
 <input type="text" name="Apodo" placeholder="Apodo"></input><br><br>
-<input type="number" name="Cedula" placeholder="Cédula"></input><br><br>
+<input type="text" name="Cedula" placeholder="Cédula"></input><br><br>
 
     </select><br><br>
 
