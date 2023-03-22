@@ -15,31 +15,33 @@ html,body {
     flex-direction: column;
     width: 80%;
     height:80%;
+    margin-top: 110px;
   }
 
-.title-head
-{
-margin: 30px;
-
-
-}
   .container-game {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     background-color:rgba(24, 12, 129, 0.027);
     width: 70%;
-    height:80%;
-    
-    }
+    height:80%
+  }
+
+.title-head img
+{
+  width: 75%;
+  height: 85%;
+  margin: 30px;
+}
 
 .game
 {
-border-left:1px solid blue;
-border-top:1px solid green;
-border-bottom:1px solid red;
+border-left:3px solid rgb(0, 0, 0);
+border-top:3px solid rgb(0, 0, 0);
+border-bottom:3px solid rgb(0, 0, 0);
     width: 80%;
     height: 100%;
+border-radius: 5px 0px 0px 5px;
 }
 
 .game-frame
@@ -51,24 +53,18 @@ flex-direction: column;
 
 .navbar
 {
-
-border-right:1px solid orange;
-border-left: solid 1px violet;
-border-top:1px solid green;
-border-bottom:1px solid red;
-    width: 20%;
+border-radius: 0px 5px 5px 0px;
+border:3px solid rgb(0, 0, 0);
+    width: 27%;
     height: 100%;
 }
-
 
 /*Botones*/
 
 .nav-link {
   background-image: linear-gradient(#f7f8fa ,#e7e9ec);
-  border-color: #adb1b8 #a2a6ac #8d9096;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 3px;
+  border: none;
+  border-radius: 2px;
   box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
   box-sizing: border-box;
   color: #0f1111;
@@ -76,12 +72,13 @@ border-bottom:1px solid red;
   display: inline-block;
   font-family: "Amazon Ember",Arial,sans-serif;
   font-size: 15px;
+  font-weight: bold;
   height: 29px;
   width: 100%;
- outline: 0;
+  outline: 0;
   overflow: hidden;
-  margin-top: 1px;
-  padding: 0 11px;
+  margin: 1px 0px;
+  padding: 29px 11px;
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;

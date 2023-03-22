@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.2">
     
     <title>El Juego de los tiempos</title>
 </head>
 <body>
 <div class="container">
-<div class="title-head">  
-<h2>EL JUEGO DE LOS TIEMPOS</h2>    
-</div>  
+
  <div class="container-game">
 
     <nav class="navbar">
@@ -29,7 +27,6 @@
     </nav>
     <a href=""></a>
     <div class="game">
-    <div class="game-frame">
-
+<div class="game-frame">
 
     

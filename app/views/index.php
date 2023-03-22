@@ -1,7 +1,4 @@
    <?php include "header.php"?>
    <div class="title-head">  
-<h2>
-    Bienvenido al juego Esto es el Index
-    </h2>    
-</div> 
+   <img src="../../assets/png.png" src="../../assets/png.png";   
     <?php include "footer.php"?>
