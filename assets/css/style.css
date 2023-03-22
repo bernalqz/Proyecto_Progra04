@@ -5,9 +5,16 @@ html,body {
     height: 100%;
     width: 100%;
     font-family: "Amazon Ember",Arial,sans-serif;
+    background-color: #009879;
     }
 /*----End-General-----*/
- 
+
+body img{
+  height: 50px;
+  width: 80px;
+  margin: 25px;
+}
+
 .container
   {
     display: flex;
@@ -29,9 +36,10 @@ html,body {
 
 .title-head img
 {
-  width: 75%;
+  position: relative;
+  width: 70%;
   height: 85%;
-  margin: 30px;
+  margin: 40px 100px;
 }
 
 .game
@@ -39,8 +47,9 @@ html,body {
 border-left:3px solid rgb(0, 0, 0);
 border-top:3px solid rgb(0, 0, 0);
 border-bottom:3px solid rgb(0, 0, 0);
-    width: 80%;
-    height: 100%;
+background-color: #fff;
+width: 80%;
+height: 100%;
 border-radius: 5px 0px 0px 5px;
 }
 
@@ -55,8 +64,9 @@ flex-direction: column;
 {
 border-radius: 0px 5px 5px 0px;
 border:3px solid rgb(0, 0, 0);
-    width: 27%;
-    height: 100%;
+background-color: #000000;
+width: 27%;
+height: 100%;
 }
 
 /*Botones*/
@@ -64,7 +74,7 @@ border:3px solid rgb(0, 0, 0);
 .nav-link {
   background-image: linear-gradient(#f7f8fa ,#e7e9ec);
   border: none;
-  border-radius: 2px;
+  border-radius: 1px;
   box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
   box-sizing: border-box;
   color: #0f1111;

@@ -9,6 +9,7 @@
     <title>El Juego de los tiempos</title>
 </head>
 <body>
+<img src="../../assets/lotto.png">
 <div class="container">
 
  <div class="container-game">

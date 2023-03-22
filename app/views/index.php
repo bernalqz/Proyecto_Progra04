@@ -1,4 +1,5 @@
    <?php include "header.php"?>
    <div class="title-head">  
-   <img src="../../assets/png.png" src="../../assets/png.png";   
+   <img src="../../assets/bingo.png">
+   </div>   
     <?php include "footer.php"?>
