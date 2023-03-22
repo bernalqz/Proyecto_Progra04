@@ -3,7 +3,7 @@
 
 
 <div class="title-head">  
-<h2>Crear Jugador</h2>    
+<h2>Crear Jugadores</h2>    
 </div> 
 
 <div>
