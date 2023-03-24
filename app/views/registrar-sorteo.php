@@ -53,7 +53,7 @@ if ($datos_consulta->num_rows>0){
             <td><?=$Maxi?></td>
             <td><?=$Mini?></td>
             <th scope="row" >
-            <button type="button" id="open-modal">Editar</button>
+            <button type="button" id="open-modal<?=$fila['Id_raffle']?>">Editar</button>
              </th>
             <th>
             <form method="post" action="../../assets/php/borrar_sorteo.php">
@@ -62,9 +62,43 @@ if ($datos_consulta->num_rows>0){
               </form>    
             </th>
           </tr>
+
+
+
+<!--Ventana Modal Editar-->
+
+
+<dialog id="modal-wind<?=$fila['Id_raffle']?>">
+
+<h2>Editar</h2>
+<form action="../../assets/php/editar_sorteo.php" method="POST" method="dialog"> 
+<label for=""></label>
+<input type="hidden" name="id" value="<?php echo $fila['Id_raffle'];?>">
+<input type="text"   name="NombreSorteo" placeholder="Nombre del Sorteo"  value="<?php echo $Nombre?>" required></input><br><br>
+<input type="number" name="VecesSorteo"  placeholder="Cuantas veces paga" max="100" value="<?php echo $Veces?>" required></input><br><br>
+<input type="number" name="MaxSorteo"  placeholder="Límite máximo de dinero" value="<?php echo $Maxi?>" required></input><br><br>
+<input type="number" name="MinSorteo"  placeholder="Límite mínimo de dinero" value="<?php echo $Mini?>" required></input><br><br>
+<br>
+<input type="submit" class="" value="Editar"></input>
+</form>
+<br><br>
+<button id="cerrar-modal<?=$fila['Id_raffle']?>">x</button>
+</dialog>
+<!--Ventana Modal end-->
+
+<script>
+const btn_open_modal<?=$fila['Id_raffle']?> = document.querySelector("#open-modal<?=$fila['Id_raffle']?>");
+const btn_close_modal<?=$fila['Id_raffle']?> = document.querySelector("#cerrar-modal<?=$fila['Id_raffle']?>")
+const modal_editar_sorteo<?=$fila['Id_raffle']?> = document.querySelector("#modal-wind<?=$fila['Id_raffle']?>")
+btn_open_modal<?=$fila['Id_raffle']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_raffle']?>.showModal()})
+btn_close_modal<?=$fila['Id_raffle']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_raffle']?>.close()})
+</script>
 <?php
 
-     }
+
+
+
+     } // aqui finaliza el while
   }
 }
 $con->close();
@@ -73,31 +107,7 @@ $con->close();
 </table>
 <!-- LLenado de la tabla end-->
 
-<!--Ventana Modal-->
-<dialog id="modal-wind">
-<h2>Editar</h2>
-<form action="../../assets/php/registrar_sorteo.php" method="POST" method="dialog"> 
-<label for=""></label>
-<input type="text"   name="NombreSorteo" placeholder="Nombre del Sorteo" required></input><br><br>
-<input type="number" name="VecesSorteo"  placeholder="Cuantas veces paga" max="100" required></input><br><br>
-<input type="number" name="MaxSorteo"  placeholder="Límite máximo de dinero" required></input><br><br>
-<input type="number" name="MinSorteo"  placeholder="Límite mínimo de dinero" required></input><br><br>
-<br>
-<input type="submit" class="nav-link" value="Registrar"></input>
-</form>
-<button id="cerrar-modal">Cerrar</button>
-</dialog>
-<!--Ventana Modal end-->
 
 
 
 <?php include "footer.php"?>
-
-
-<script>
-const btn_open_modal = document.querySelector("#open-modal");
-const btn_close_modal = document.querySelector("#cerrar-modal")
-const modal_editar_sorteo = document.querySelector("#modal-wind")
-btn_open_modal.addEventListener("click",()=>{modal_editar_sorteo.showModal()})
-btn_close_modal.addEventListener("click",()=>{modal_editar_sorteo.close()})
-</script>
