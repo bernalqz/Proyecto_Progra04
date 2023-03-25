@@ -69,6 +69,8 @@ if ($datos_consulta->num_rows>0){
 
 <div class="pop-up">
 
+<button class="x-btn" id="cerrar-modal<?=$fila['Id_raffle']?>">x</button>
+
 <h2>Editar</h2>
 
 <form action="../../assets/php/editar_sorteo.php" method="POST" method="dialog"> 
@@ -82,7 +84,6 @@ if ($datos_consulta->num_rows>0){
 <input type="submit" class="btn" value="Editar"></input>
 </form>
 <br><br>
-<button id="cerrar-modal<?=$fila['Id_raffle']?>">x</button>
 
 </div>
 </dialog>
