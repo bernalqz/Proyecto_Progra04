@@ -23,7 +23,7 @@
 <input type="number" placeholder="Máximo de apuesta"></input><br><br>
 <input type="number" placeholder="Mínimo de apuesta"></input><br><br>
     
-<input type="submit" class="nav-link" value="Registrar"></input>
+<input type="submit" class="btn" value="Registrar"></input>
 
 </form>
 </div>

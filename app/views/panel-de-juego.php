@@ -22,7 +22,7 @@
 <br><br>  <br><br> 
 <label for=""> Espacio para mostrar Lista de Ganadores</label> 
 <br><br>  <br><br> 
-<input type="submit" class="nav-link" value="Consultar Ganadores"></input>
+<input type="submit" class="btn" value="Consultar Ganadores"></input>
 
 </form>
 </div>

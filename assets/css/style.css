@@ -1,129 +1,181 @@
-/*----General-----*/
-html,body {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    font-family: "Amazon Ember",Arial,sans-serif;
-    background-color: #009879;
-    }
-/*----End-General-----*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
-body img{
-  height: 50px;
-  width: 80px;
-  margin: 25px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Open Sans", sans-serif;
 }
+
+/*----General-----*/
+
+body{
+  background-color: #009879;
+  font-size: 12px;
+  overflow: hidden;
+}
+  
+/*----End-General-----*/
 
 .container
   {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
-    height:80%;
-    margin-top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 20px;
   }
 
-  .container-game {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    background-color:rgba(24, 12, 129, 0.027);
-    width: 70%;
-    height:80%
+.container-game{
+  width: 850px;
+  height: 650px;
+  max-width: 100%;
+  background: #fff;
+  display: flex;
+  border-radius: 3px;
+  position: fixed;
+  bottom: 55px;
   }
 
-.title-head img
-{
+  /*Imagenes*/
+
+  .logo img{
   position: relative;
-  width: 70%;
-  height: 85%;
-  margin: 40px 100px;
+  left: 35px;
+  top: 25px;
+  width: 70px;
+  height: 50px;
+  }
+
+  .dinero img{
+    position: relative;
+    left: 1290px;
+    top: 453px;
+    width: 200px;
+    height: 260px;
+    transform: rotate(-15deg);
+    transition: 300ms;
+  }
+
+  .dinero img:hover{  
+    transform: scale(1.15);
+  }
+
+  .ganador img{
+    position: relative;
+    left: 20px;
+    top: 175px;
+    width: 340px;
+    height: 260px;
+  }
+
+  .dos-tarjetas img{
+    position: relative;
+    left: 70px;
+    bottom: 430px;
+    width: 220px;
+    height: 260px;
+    transform: rotate(-20deg);
+    transition: 400ms;
+  }
+
+  .dos-tarjetas img:hover{  
+    transform: scale(1.15);
+  }
+
+  .tarjetas img{
+    position: relative;
+    left: 1180px;
+    bottom: 770px;
+    width: 230px;
+    height: 260px;
+    transform: rotate(25deg);
+  }
+
+  .title-head img{
+    width: 490px;
+    height: 495px;
+  }
+
+  /*Imagenes-final*/
+
+.navbar
+{
+  width: 200px;
+  height: 100%;
+  background: #1D1B1B;
+  padding: 40px 20px;
+  text-align: right;
+  border-radius: 3px 0px 0px 3px;
 }
 
-.game
-{
-border-left:3px solid rgb(0, 0, 0);
-border-top:3px solid rgb(0, 0, 0);
-border-bottom:3px solid rgb(0, 0, 0);
-background-color: #fff;
-width: 80%;
-height: 100%;
-border-radius: 5px 0px 0px 5px;
+/*Side bar*/
+
+.nav-link {
+  color: #fff;
+  height: 70px;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 3px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: none;
+  background-color: #1D1B1B;
 }
+
+.nav-link:hover {
+  color: #009879;
+}
+
+/*Side bar-end*/
 
 .game-frame
 {
 display:flex;
 align-items: center;
 flex-direction: column;
+align-items: center;
+
+
+/*scroll bar */
+
+position: relative;
+top: 45px;
+left: 40px;
+height: calc(700px - 140px);
+overflow: auto;
+overflow-x: none;
 }
 
-.navbar
-{
-border-radius: 0px 5px 5px 0px;
-border:3px solid rgb(0, 0, 0);
-background-color: #000000;
-width: 27%;
-height: 100%;
-}
+/* fin scroll bar */
 
-/*Botones*/
+/*botones*/
 
-.nav-link {
-  background-image: linear-gradient(#f7f8fa ,#e7e9ec);
+.btn{
+  background-color: lightslategray; 
   border: none;
-  border-radius: 1px;
-  box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
-  box-sizing: border-box;
-  color: #0f1111;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Amazon Ember",Arial,sans-serif;
-  font-size: 15px;
-  font-weight: bold;
-  height: 29px;
-  width: 100%;
-  outline: 0;
-  overflow: hidden;
-  margin: 1px 0px;
-  padding: 29px 11px;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  text-overflow: ellipsis;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
+  display: inline-block;
+  font-size: 16px;
 }
 
-.nav-link:active {
-  border-bottom-color: #a2a6ac;
-}
-
-.nav-link:active:hover {
-  border-bottom-color: #a2a6ac;
-}
-
-.nav-link:hover {
-  border-color: #a2a6ac #979aa1 #82858a;
-}
-
-.nav-link:focus {
-  border-color: #e77600;
-  box-shadow: rgba(228, 121, 17, .5) 0 0 3px 2px;
-  outline: 0;
-}
-/*Botones-end*/
-
-
+/*botones-end*/
 
 /*Tabla*/
 
 .content-table {
   border-collapse: collapse;
-  margin: 25px 0;
+  margin: 25px 50px;
   font-size: 0.9em;
   min-width: 400px;
   border-radius: 5px 5px 0 0;
@@ -152,12 +204,12 @@ height: 100%;
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid lightslategray;
 }
 
 .content-table tbody tr.active-row {
   font-weight: bold;
-  color: #009879;
+  color: lightslategray;
 }
 
 /*Tabla-end*/

@@ -14,7 +14,7 @@
 <input type="number" name="MaxSorteo"  placeholder="Límite máximo de dinero" required></input><br><br>
 <input type="number" name="MinSorteo"  placeholder="Límite mínimo de dinero" required></input><br><br>
 <br>
-<input type="submit" class="nav-link" value="Registrar"></input>
+<input type="submit" class="btn" value="Registrar"></input>
 </form>
 </div>
 
@@ -29,8 +29,7 @@
             <th>Máximo</th>
             <th>Mínimo</th>
             <th>Editar</th>
-            <th>Eliminar</th>
-            
+            <th>Eliminar</th>           
           </tr>
         </thead>
         <tbody>
@@ -49,7 +48,7 @@ if ($datos_consulta->num_rows>0){
         ?>
          <tr>
             <td><?=$Nombre?></td>
-            <td><?=$Veces ?></td>
+            <td><?=$Veces?></td>
             <td><?=$Maxi?></td>
             <td><?=$Mini?></td>
             <th scope="row" >
@@ -62,8 +61,6 @@ if ($datos_consulta->num_rows>0){
               </form>    
             </th>
           </tr>
-
-
 
 <!--Ventana Modal Editar-->
 
@@ -84,6 +81,7 @@ if ($datos_consulta->num_rows>0){
 <br><br>
 <button id="cerrar-modal<?=$fila['Id_raffle']?>">x</button>
 </dialog>
+
 <!--Ventana Modal end-->
 
 <script>
@@ -93,21 +91,17 @@ const modal_editar_sorteo<?=$fila['Id_raffle']?> = document.querySelector("#moda
 btn_open_modal<?=$fila['Id_raffle']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_raffle']?>.showModal()})
 btn_close_modal<?=$fila['Id_raffle']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_raffle']?>.close()})
 </script>
+
 <?php
-
-
-
-
      } // aqui finaliza el while
   }
 }
 $con->close();
 ?>
+
 </tbody>
 </table>
 <!-- LLenado de la tabla end-->
-
-
 
 
 <?php include "footer.php"?>

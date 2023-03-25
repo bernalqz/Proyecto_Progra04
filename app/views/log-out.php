@@ -1,5 +1,5 @@
 <?php include "header.php"?>
 
-Log Out
+<h2>Log out</h2> 
 
 <?php include "footer.php"?>

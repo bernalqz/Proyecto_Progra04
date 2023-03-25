@@ -20,7 +20,7 @@
 </select>
 <br><br>
     
-<input type="submit" class="nav-link" value="Registrar y Imprimir"></input>
+<input type="submit" class="btn" value="Registrar y Imprimir"></input>
 
 </form>
 </div>
