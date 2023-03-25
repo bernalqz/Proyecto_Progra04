@@ -141,14 +141,19 @@ display:flex;
 align-items: center;
 flex-direction: column;
 align-items: center;
+}
 
+.game-frame h2{
+  margin-bottom: 15px;
+}
 
 /*scroll bar */
 
+.container-game .game-frame{
 position: relative;
 top: 45px;
-left: 40px;
-height: calc(700px - 140px);
+padding: auto;
+height: calc(100% - 110px);
 overflow: auto;
 overflow-x: none;
 }
@@ -162,11 +167,35 @@ overflow-x: none;
   border: none;
   border-radius: 5px;
   color: white;
-  padding: 15px 32px;
+  padding: 12px 22px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.content-table .editar-btn{
+  background-color: rgb(247, 196, 129); 
+  border: none;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+.content-table .delete-btn{
+  background-color: rgb(248, 56, 98); 
+  border: none;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 15px;
 }
 
 /*botones-end*/
@@ -186,7 +215,7 @@ overflow-x: none;
 .content-table thead tr {
   background-color: lightslategray;
   color: #ffffff;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -213,3 +242,33 @@ overflow-x: none;
 }
 
 /*Tabla-end*/
+
+/*Pop-up*/
+
+.pop-up{
+  width: 300px;
+  height: 350px;
+  border: none;
+  border-radius: 3px;
+  overflow: hidden;
+  overflow-x: none;
+  padding: 10px 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.pop-up h2{
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.pop-up .datos{
+  margin: 20px;
+}
+
+.x-btn{
+  border: none;
+  font-weight: bold;
+}
+
+/*Pop-up-end*/

@@ -3,7 +3,7 @@
 
 
 <div class="title-head">  
-<h2>Crear Un Sorteo</h2>    
+<h2>Sorteo</h2>    
 </div> 
 
 <div>
@@ -52,12 +52,12 @@ if ($datos_consulta->num_rows>0){
             <td><?=$Maxi?></td>
             <td><?=$Mini?></td>
             <th scope="row" >
-            <button type="button" id="open-modal<?=$fila['Id_raffle']?>">Editar</button>
+            <button type="button" class="editar-btn" id="open-modal<?=$fila['Id_raffle']?>">Editar</button>
              </th>
             <th>
             <form method="post" action="../../assets/php/borrar_sorteo.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_raffle'];?>">
-		          <input  type="submit"  value="Eliminar">
+		          <input  type="submit" class="delete-btn" value="Eliminar">
               </form>    
             </th>
           </tr>
@@ -67,7 +67,10 @@ if ($datos_consulta->num_rows>0){
 
 <dialog id="modal-wind<?=$fila['Id_raffle']?>">
 
+<div class="pop-up">
+
 <h2>Editar</h2>
+
 <form action="../../assets/php/editar_sorteo.php" method="POST" method="dialog"> 
 <label for=""></label>
 <input type="hidden" name="id" value="<?php echo $fila['Id_raffle'];?>">
@@ -76,10 +79,12 @@ if ($datos_consulta->num_rows>0){
 <input type="number" name="MaxSorteo"  placeholder="Límite máximo de dinero" value="<?php echo $Maxi?>" required></input><br><br>
 <input type="number" name="MinSorteo"  placeholder="Límite mínimo de dinero" value="<?php echo $Mini?>" required></input><br><br>
 <br>
-<input type="submit" class="" value="Editar"></input>
+<input type="submit" class="btn" value="Editar"></input>
 </form>
 <br><br>
 <button id="cerrar-modal<?=$fila['Id_raffle']?>">x</button>
+
+</div>
 </dialog>
 
 <!--Ventana Modal end-->
