@@ -65,7 +65,7 @@ if ($datos_consulta->num_rows>0){
 <!--Ventana Modal Editar-->
 
 
-<dialog id="modal-wind<?=$fila['Id_raffle']?>">
+<dialog class="pop" id="modal-wind<?=$fila['Id_raffle']?>">
 
 <div class="pop-up">
 

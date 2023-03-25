@@ -273,4 +273,10 @@ overflow-x: none;
   background-color: #fff;
 }
 
+.pop{
+  position: relative;
+  left: 40%;
+  top: 25%;
+}
+
 /*Pop-up-end*/

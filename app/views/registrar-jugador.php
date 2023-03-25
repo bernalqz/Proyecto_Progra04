@@ -61,7 +61,7 @@ if ($datos_consulta->num_rows>0){
             </th>
           </tr>
 
-<dialog id="modal-wind<?=$fila['Id_gamer']?>">
+<dialog class="pop" id="modal-wind<?=$fila['Id_gamer']?>">
 
 <div class="pop-up">
 
