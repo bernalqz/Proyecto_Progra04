@@ -1,38 +1,91 @@
 <?php include "header.php"?>
 
-<br>
-<br>
-<br>
+
+
 <table class="content-table">
         <thead>
           <tr>
-            <th>Id</th>
             <th>Nombre</th>
             <th>Apodo</th>
-            <th>Numeros Ganadores</th>
+            <th>Cedula</th>
+            <th>Fecha/Hora</th>
+            <th>Editar</th>
+            <th>Eliminar</th>           
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Juancho</td>
-            <td>Popo</td>
-            <td>0</td>
+<?php
+require '../../assets/php/dbconnection.php';
+if($con){
+$consulta_jugador = 'SELECT * FROM jugadores';
+$datos_consulta = $con->query($consulta_jugador);
+if ($datos_consulta->num_rows>0){
+    $contador=0;
+    while($fila=$datos_consulta->fetch_assoc()){
+        $Nombre = $fila['Name_gamer'];
+        $Apodo = $fila['Nick_gamer'];
+        $Cedula = $fila['Ced_gamer'];
+        $Hora = $fila['Time_gamer'];
+        ?>
+         <tr>
+            <td><?=$Nombre?></td>
+            <td><?=$Apodo?></td>
+            <td><?=$Cedula?></td>
+            <td><?=$Hora?></td>
+            <th scope="row" >
+            <button type="button" class="editar-btn" id="open-modal<?=$fila['Id_gamer']?>">Editar</button>
+             </th>
+            <th>
+            <form method="post" action="../../assets/php/borrar_jugador.php">
+              <input type="hidden" name="id" value="<?php echo $fila['Id_gamer'];?>">
+		          <input  type="submit" class="delete-btn" value="Eliminar">
+              </form>    
+            </th>
           </tr>
-          <tr class="active-row">
-            <td>2</td>
-            <td>Pedro</td>
-            <td>Manudo</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Nick</td>
-            <td>Tristón</td>
-            <td>3</td>
-          </tr>
-        </tbody>
-      </table>
+
+<dialog id="modal-wind<?=$fila['Id_gamer']?>">
+
+<div class="pop-up">
+
+<h2>Editar</h2>
+
+<form action="../../assets/php/editar_jugador.php" method="POST" method="dialog"> 
+<label for=""></label>
+<input type="hidden" name="id" value="<?php echo $fila['Id_gamer'];?>">
+<input class="dato" type="text"   name="Nombre" placeholder="Nombre del jugador"  value="<?php echo $Nombre?>" required></input><br><br>
+<input class="dato" type="text" name="Apodo"  placeholder="Apodo del jugador" max="100" value="<?php echo $Apodo?>" required></input><br><br>
+<input class="dato" type="number" name="Cedula"  placeholder="Cedula" value="<?php echo $Cedula?>" required></input><br><br>
+<br>
+<input type="submit" class="btn" value="Editar"></input>
+</form>
+<br><br>
+<button class="x-btn" id="cerrar-modal<?=$fila['Id_gamer']?>">x</button>
+</div>
+
+</dialog>
+
+<!--Ventana Modal end-->
+
+<script>
+const btn_open_modal<?=$fila['Id_gamer']?> = document.querySelector("#open-modal<?=$fila['Id_gamer']?>");
+const btn_close_modal<?=$fila['Id_gamer']?> = document.querySelector("#cerrar-modal<?=$fila['Id_gamer']?>")
+const modal_editar_sorteo<?=$fila['Id_gamer']?> = document.querySelector("#modal-wind<?=$fila['Id_gamer']?>")
+btn_open_modal<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_gamer']?>.showModal()})
+btn_close_modal<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_gamer']?>.close()})
+</script>
+
+<?php
+     } // aqui finaliza el while
+  }
+}
+$con->close();
+?>
+
+</tbody>
+</table>
+<!-- LLenado de la tabla end-->
+
+
 
 
 

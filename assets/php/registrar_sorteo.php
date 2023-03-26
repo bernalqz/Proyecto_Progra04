@@ -34,8 +34,8 @@ $Id_raffle = $row['Id_raffle'];
 // Un ciclo para crear los 100 numeros del sorteo
 $i=0;
 while($i<101){
-    $sql = "INSERT INTO numeros (Id_usser_number,Id_raffle_number,Number_number,Maxbet_number,Minbet_number) 
-    VALUES ('$Id_usser','$Id_raffle','$i','$MaxSorteo','$MinSorteo')";
+    $sql = "INSERT INTO numeros (Id_usser_number,Id_raffle_number,Number_number,Maxbet_number,Minbet_number,Limited_number) 
+    VALUES ('$Id_usser','$Id_raffle','$i','$MaxSorteo','$MinSorteo','0')";
     if ($con->query($sql) == TRUE) {
     $i++;  
     }

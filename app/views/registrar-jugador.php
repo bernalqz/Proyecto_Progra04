@@ -19,7 +19,7 @@
 
 </form>
 </div>
-
+<!--Tabla-->
 <table class="content-table">
         <thead>
           <tr>
