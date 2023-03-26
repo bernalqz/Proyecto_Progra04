@@ -16,7 +16,11 @@
 <img src="../../assets/dinero.png">
 </div>
 <div class="ganador">
+
+
 <img src="../../assets/ganador.png">
+
+
 </div>
 <div class="dos-tarjetas">
 <img src="../../assets/dos-tarjetas.png">
