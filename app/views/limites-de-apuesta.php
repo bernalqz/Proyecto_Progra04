@@ -5,7 +5,7 @@
 <div class="title-head">  
 <h2>Restricciones en apuestas de Números</h2>    
 </div> 
-
+<!--Formulario-->
 <div>
 <form action="../../assets/php/limite_de_apuesta.php" method="POST">
 <label for=""></label>
@@ -37,7 +37,6 @@ if($con){
 
 </select>
 <br><br>
-<!--<input type="hidden" name="id" value="<?php echo $fila['Id_raffle'];?>">-->
 <input type="number" name="numero" min="0" max="100" required placeholder="Número a limitar"></input><br><br>
 <input type="number" name="MaxSorteo"  placeholder="Límite máximo de dinero" required></input><br><br>
 <input type="number" name="MinSorteo"  placeholder="Límite mínimo de dinero" required></input><br><br>
@@ -71,10 +70,6 @@ if($con){
 require '../../assets/php/dbconnection.php';
 
 
-
-
-
-
 if($con){
 
 
@@ -98,6 +93,8 @@ if ($datos_consulta->num_rows>0){
   $veces = $row['Times_raffle'];
   //echo $Id_raffle;
   // Consulta sorteo y veces end
+
+
          ?>
          <tr>
             
@@ -124,7 +121,9 @@ if ($datos_consulta->num_rows>0){
 
 <h2>Editar</h2>
 
-<form action="../../assets/php/editar_numero.php" method="POST" method="dialog"> 
+
+
+<form action="../../assets/php/editar_limites_de_apuesta.php" method="POST" method="dialog"> 
 <label for=""></label>
 <input type="hidden" name="id" value="<?php echo $fila['Id_number'];?>">
 <input class="dato" type="text"   name="Nombre" placeholder="Nombre del jugador"  value="<?php echo $Nombre?>" required></input><br><br>
@@ -133,6 +132,9 @@ if ($datos_consulta->num_rows>0){
 <br>
 <input type="submit" class="btn" value="Editar"></input>
 </form>
+
+
+
 <br><br>
 <button class="x-btn" id="cerrar-modal<?=$fila['Id_number']?>">x</button>
 </div>
