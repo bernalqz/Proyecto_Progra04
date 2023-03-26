@@ -65,9 +65,11 @@ if ($datos_consulta->num_rows>0){
 <!--Ventana Modal Editar-->
 
 
-<dialog id="modal-wind<?=$fila['Id_raffle']?>">
+<dialog class="pop" id="modal-wind<?=$fila['Id_raffle']?>">
 
 <div class="pop-up">
+
+<button class="x-btn" id="cerrar-modal<?=$fila['Id_raffle']?>">x</button>
 
 <h2>Editar</h2>
 
@@ -82,7 +84,6 @@ if ($datos_consulta->num_rows>0){
 <input type="submit" class="btn" value="Editar"></input>
 </form>
 <br><br>
-<button id="cerrar-modal<?=$fila['Id_raffle']?>">x</button>
 
 </div>
 </dialog>

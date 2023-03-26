@@ -171,6 +171,7 @@ overflow-x: none;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .content-table .editar-btn{
@@ -183,6 +184,7 @@ overflow-x: none;
   display: inline-block;
   font-size: 15px;
   padding: 10px 20px;
+  cursor: pointer;
 }
 
 .content-table .delete-btn{
@@ -195,6 +197,7 @@ overflow-x: none;
   display: inline-block;
   font-size: 15px;
   padding: 10px 15px;
+  cursor: pointer;
 }
 
 /*botones-end*/
@@ -261,13 +264,18 @@ overflow-x: none;
   margin-bottom: 15px;
 }
 
-.pop-up .datos{
-  margin: 20px;
-}
-
 .x-btn{
   border: none;
   font-weight: bold;
+  font-size: 25px;
+  color: #fa0101;
+  background-color: #fff;
+}
+
+.pop{
+  position: relative;
+  left: 40%;
+  top: 25%;
 }
 
 /*Pop-up-end*/
