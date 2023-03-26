@@ -11,7 +11,7 @@
 <label for=""></label>
 
 
-<label for="">Sorteo: </label>
+<label for="">Sorteos: </label>
 <select name="seleccion" id="">
   
 <!--Llenado del Select-->
