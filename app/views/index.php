@@ -1,5 +1,7 @@
    <?php include "header.php"?>
-   <div class="title-head">  
-   <img src="../../assets/bingo.png">
+
+   <div>  
+   <img class="icono" src="../../assets/bingo.png">
    </div>   
+
     <?php include "footer.php"?>

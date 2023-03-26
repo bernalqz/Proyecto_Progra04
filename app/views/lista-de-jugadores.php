@@ -3,6 +3,7 @@
 <br>
 <br>
 <br>
+<div>
 <table class="content-table">
         <thead>
           <tr>
@@ -33,7 +34,7 @@
           </tr>
         </tbody>
       </table>
-
+</div>
 
 
 <?php include "footer.php"?>

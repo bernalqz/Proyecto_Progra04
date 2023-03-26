@@ -1,10 +1,10 @@
 <?php include "header.php"?>
 
 <div class="title-head">  
-<h2>Panel de Juego</h2>    
+<h1>Panel de Juego</h1>    
 </div> 
 
-<div>
+<div class="ventanas">
 <form action="../../assets/php/panel_de_juego.php">
 <label for="">Número ganador:</label>
 
@@ -22,7 +22,7 @@
 <br><br>  <br><br> 
 <label for=""> Espacio para mostrar Lista de Ganadores</label> 
 <br><br>  <br><br> 
-<input type="submit" class="btn" value="Consultar Ganadores"></input>
+<input type="submit" class="btn" value="Ganadores"></input>
 
 </form>
 </div>

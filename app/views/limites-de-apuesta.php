@@ -2,10 +2,10 @@
 
 
 <div class="title-head">  
-<h2>Límites de Dinero</h2>    
+<h1>Límites de Dinero</h1>    
 </div> 
 
-<div>
+<div class="ventanas">
 <form action="../../assets/php/limite_de_apuesta.php">
 <label for=""></label>
 
@@ -19,7 +19,7 @@
   <option value="">Hondureña</option>
 </select>
 <br><br>
-<input type="number" min="0" max="100" required placeholder="Número a limitar"></input><br><br>
+<input type="number" min="0" max="100" required placeholder="Min/Max"></input><br><br>
 <input type="number" placeholder="Máximo de apuesta"></input><br><br>
 <input type="number" placeholder="Mínimo de apuesta"></input><br><br>
     
