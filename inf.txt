@@ -63,7 +63,7 @@ Id_raffle_number <FK>
 Number_number
 Maxbet_number
 Minbet_number
-Limited_number
+Limited_number   (Le agregué este campo nuevo)
 Time_number
 
 
