@@ -3,11 +3,19 @@
 
 
 <div class="title-head">  
+<<<<<<< HEAD
+<h1>Límites de Dinero</h1>    
+</div> 
+
+<div class="ventanas">
+<form action="../../assets/php/limite_de_apuesta.php">
+=======
 <h2>Restricciones en apuestas de Números</h2>    
 </div> 
 <!--Formulario-->
 <div>
 <form action="../../assets/php/limite_de_apuesta.php" method="POST">
+>>>>>>> 8884fd123c4469d40316afec9489fc08765dc3ef
 <label for=""></label>
 
 
@@ -37,9 +45,15 @@ if($con){
 
 </select>
 <br><br>
+<<<<<<< HEAD
+<input type="number" min="0" max="100" required placeholder="Min/Max"></input><br><br>
+<input type="number" placeholder="Máximo de apuesta"></input><br><br>
+<input type="number" placeholder="Mínimo de apuesta"></input><br><br>
+=======
 <input type="number" name="numero" min="0" max="100" required placeholder="Número a limitar"></input><br><br>
 <input type="number" name="MaxSorteo"  placeholder="Límite máximo de dinero" required></input><br><br>
 <input type="number" name="MinSorteo"  placeholder="Límite mínimo de dinero" required></input><br><br>
+>>>>>>> 8884fd123c4469d40316afec9489fc08765dc3ef
     
 <input type="submit" class="btn" value="Registrar"></input>
 

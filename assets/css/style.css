@@ -23,23 +23,230 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 20px;
   }
 
 .container-game{
   width: 850px;
   height: 650px;
-  max-width: 100%;
   background: #fff;
   display: flex;
   border-radius: 3px;
   position: fixed;
   bottom: 55px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
   }
 
-  /*Imagenes*/
+.navbar
+{
+  width: 200px;
+  height: 100%;
+  background: #1D1B1B;
+  padding: 40px 20px;
+  text-align: right;
+  border-radius: 3px 0px 0px 3px;
+  display: block;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+}
 
-  .logo img{
+/*Side bar*/
+
+.nav-link {
+  color: #fff;
+  height: 70px;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 3px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: none;
+  background-color: #1D1B1B;
+}
+
+.nav-link:hover {
+  color: #009879;
+}
+
+/*Side bar-end*/
+
+.game{
+align-items: center;
+flex-direction: column;
+position: relative;
+top: 45px;
+}
+
+.game .ventanas{
+  position: relative;
+  left: 250px;
+}
+
+.game h1{
+margin-bottom: 15px;
+position: relative;
+left: 45px;
+}
+
+.game .btn{
+  margin-bottom: 15px;
+  position: relative;
+  left: 27px;
+  }
+
+/*scroll bar */
+
+.game-frame{
+width: 650px;
+height: calc(100% - 100px);
+overflow: auto;
+overflow-x: hidden;
+}
+
+/* fin scroll bar */
+
+/*botones*/
+
+.btn{
+  background-color: rgb(10, 10, 10); 
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 12px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-pop{
+  background-color: rgb(10, 10, 10); 
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 9px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.content-table .editar-btn{
+  background-color: rgb(247, 225, 129); 
+  border: 1px solid;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.content-table .delete-btn{
+  background-color: rgb(175, 50, 77); 
+  border: 1px solid;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*botones-end*/
+
+/*Tabla*/
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 30px;
+  font-size: 0.9em;
+  min-width: 300px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: rgb(18, 18, 19);
+  color: #ffffff;
+  text-align: center;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(18, 18, 19);
+}
+
+/*Tabla-end*/
+
+/*Pop-up*/
+
+.pop-up{
+  width: 300px;
+  height: 350px;
+  border: none;
+  border-radius: 3px;
+  overflow: hidden;
+  overflow-x: none;
+  padding: 10px 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.pop-up h2{
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.x-btn{
+  position: relative;
+  left: 125px;
+  border: none;
+  font-weight: bold;
+  font-size: 25px;
+  color: #0a0a0a;
+  background-color: #fff;
+}
+
+.pop{
+  position: relative;
+  left: 41%;
+  top: 25%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/*Pop-up-end*/
+
+ /*Imagenes*/
+
+ .logo img{
   position: relative;
   left: 35px;
   top: 25px;
@@ -92,190 +299,21 @@ body{
     transform: rotate(25deg);
   }
 
-  .title-head img{
-    width: 490px;
-    height: 495px;
+  .icono{
+    width: 480px;
+    height: 485px;
+    position: relative;
+    top: 40px;
+    left: 80px;
+    transition: 400ms;
+  }
+
+  .icono:hover{  
+    transform: scale(1.1);
   }
 
   /*Imagenes-final*/
 
-.navbar
-{
-  width: 200px;
-  height: 100%;
-  background: #1D1B1B;
-  padding: 40px 20px;
-  text-align: right;
-  border-radius: 3px 0px 0px 3px;
-}
-
-/*Side bar*/
-
-.nav-link {
-  color: #fff;
-  height: 70px;
-  text-align: center;
-  text-decoration: none;
-  outline: 0;
-  overflow: hidden;
-  font-size: 15px;
-  font-weight: bold;
-  position: relative;
-  margin-bottom: 3px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  border: none;
-  background-color: #1D1B1B;
-}
-
-.nav-link:hover {
-  color: #009879;
-}
-
-/*Side bar-end*/
-
-.game-frame
-{
-display:flex;
-align-items: center;
-flex-direction: column;
-align-items: center;
-}
-
-.game-frame h2{
-  margin-bottom: 15px;
-}
-
-/*scroll bar */
-
-.container-game .game-frame{
-position: relative;
-top: 45px;
-padding: auto;
-height: calc(100% - 110px);
-overflow: auto;
-overflow-x: none;
-}
-
-/* fin scroll bar */
-
-/*botones*/
-
-.btn{
-  background-color: lightslategray; 
-  border: none;
-  border-radius: 5px;
-  color: white;
-  padding: 12px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.content-table .editar-btn{
-  background-color: rgb(247, 196, 129); 
-  border: none;
-  border-radius: 5px;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.content-table .delete-btn{
-  background-color: rgb(248, 56, 98); 
-  border: none;
-  border-radius: 5px;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-
-/*botones-end*/
-
-/*Tabla*/
-
-.content-table {
-  border-collapse: collapse;
-  margin: 25px 50px;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.content-table thead tr {
-  background-color: lightslategray;
-  color: #ffffff;
-  text-align: center;
-  font-weight: bold;
-}
-
-.content-table th,
-.content-table td {
-  padding: 12px 15px;
-}
-
-.content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.content-table tbody tr:last-of-type {
-  border-bottom: 2px solid lightslategray;
-}
-
-.content-table tbody tr.active-row {
-  font-weight: bold;
-  color: lightslategray;
-}
-
-/*Tabla-end*/
-
-/*Pop-up*/
-
-.pop-up{
-  width: 300px;
-  height: 350px;
-  border: none;
-  border-radius: 3px;
-  overflow: hidden;
-  overflow-x: none;
-  padding: 10px 20px;
-  justify-content: center;
-  text-align: center;
-}
-
-.pop-up h2{
-  margin-top: 25px;
-  margin-bottom: 15px;
-}
-
-.x-btn{
-  border: none;
-  font-weight: bold;
-  font-size: 25px;
-  color: #fa0101;
-  background-color: #fff;
-}
-
-.pop{
-  position: relative;
-  left: 40%;
-  top: 25%;
-}
-
-/*Pop-up-end*/
+  input:focus{
+    border: 1px solid #1D1B1B;
+  }

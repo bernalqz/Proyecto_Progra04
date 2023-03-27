@@ -1,12 +1,10 @@
 <?php include "header.php"?>
 
-
-
 <div class="title-head">  
-<h2>Sorteo</h2>    
+<h1>Sorteo</h1>    
 </div> 
 
-<div>
+<div class="ventanas">
 <form action="../../assets/php/registrar_sorteo.php" method="POST"> 
 <label for=""></label>
 <input type="text"   name="NombreSorteo" placeholder="Nombre del Sorteo" required></input><br><br>
@@ -81,7 +79,7 @@ if ($datos_consulta->num_rows>0){
 <input type="number" name="MaxSorteo"  placeholder="Límite máximo de dinero" value="<?php echo $Maxi?>" required></input><br><br>
 <input type="number" name="MinSorteo"  placeholder="Límite mínimo de dinero" value="<?php echo $Mini?>" required></input><br><br>
 <br>
-<input type="submit" class="btn" value="Editar"></input>
+<input type="submit" class="btn-pop" value="Editar"></input>
 </form>
 <br><br>
 

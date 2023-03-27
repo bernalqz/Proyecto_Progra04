@@ -3,17 +3,17 @@
 
 
 <div class="title-head">  
-<h2>Jugador</h2>    
+<h1>Jugador</h1>    
 </div> 
 
-<div>
+<div class="ventanas">
 <form action="../../assets/php/registrar_jugador.php" method="POST">
 <label for=""></label>
 <input type="text" name="Nombre" placeholder="Nombre" required></input><br><br>
 <input type="text" name="Apodo" placeholder="Apodo" required></input><br><br>
 <input type="text" name="Cedula" placeholder="Cédula" required></input><br><br>
 
-</select><br><br>
+</select>
 
 <input type="submit" class="btn" value="Registrar"></input>
 
@@ -76,7 +76,7 @@ if ($datos_consulta->num_rows>0){
 <input type="text" name="Apodo"  placeholder="Apodo del jugador" max="100" value="<?php echo $Apodo?>" required></input><br><br>
 <input type="number" name="Cedula"  placeholder="Cedula" value="<?php echo $Cedula?>" required></input><br><br>
 <br>
-<input type="submit" class="btn" value="Editar"></input>
+<input type="submit" class="btn-pop" value="Editar"></input>
 </form>
 
 </div>

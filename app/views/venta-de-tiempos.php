@@ -1,10 +1,10 @@
 <?php include "header.php"?>
 
 <div class="title-head">  
-<h2>Venta de Tiempos</h2>    
+<h1>Venta de Tiempos</h1>    
 </div> 
 
-<div>
+<div class="ventanas">
 <form action="../../assets/php/venta_de_tiempos.php">
 <label for=""></label>
 <input type="number" placeholder="ID del Jugador"></input><br><br>
@@ -20,7 +20,9 @@
 </select>
 <br><br>
     
-<input type="submit" class="btn" value="Registrar y Imprimir"></input>
+<input type="submit" class="btn" value="Registrar"></input>
+<br>
+<input type="submit" class="btn" value="Imprimir"></input>
 
 </form>
 </div>
