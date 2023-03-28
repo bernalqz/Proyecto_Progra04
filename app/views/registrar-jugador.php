@@ -51,12 +51,12 @@ if ($datos_consulta->num_rows>0){
             <td><?=$Cedula?></td>
             <td><?=$Hora?></td>
             <th scope="row" >
-            <button type="button" class="editar-btn" id="open-modal<?=$fila['Id_gamer']?>">Editar</button>
+            <button type="button" class="editar-btn fa-solid fa-pen-to-square" id="open-modal<?=$fila['Id_gamer']?>"></button>
              </th>
             <th>
             <form method="post" action="../../assets/php/borrar_jugador.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_gamer'];?>">
-		          <input  type="submit" class="delete-btn" value="Eliminar">
+		          <button class="delete-btn fa-solid fa-trash"></button>
               </form>    
             </th>
           </tr>

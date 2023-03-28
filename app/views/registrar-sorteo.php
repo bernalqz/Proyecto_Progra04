@@ -50,12 +50,12 @@ if ($datos_consulta->num_rows>0){
             <td><?=$Maxi?></td>
             <td><?=$Mini?></td>
             <th scope="row" >
-            <button type="button" class="editar-btn" id="open-modal<?=$fila['Id_raffle']?>">Editar</button>
+            <button type="button" class="editar-btn fa-solid fa-pen-to-square" id="open-modal<?=$fila['Id_raffle']?>"></button>
              </th>
             <th>
             <form method="post" action="../../assets/php/borrar_sorteo.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_raffle'];?>">
-		          <input  type="submit" class="delete-btn" value="Eliminar">
+		          <button class="delete-btn fa-solid fa-trash"></button>
               </form>    
             </th>
           </tr>

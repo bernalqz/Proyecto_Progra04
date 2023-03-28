@@ -7,8 +7,6 @@
 <div>
 
 
-
-
 <table class="content-table">
         <thead>
           <tr>
@@ -17,7 +15,8 @@
             <th>Cedula</th>
             <th>Fecha/Hora</th>
             <th>Editar</th>
-            <th>Eliminar</th>           
+            <th>Eliminar</th>   
+            <th>Vender</th>        
           </tr>
         </thead>
         <tbody>
@@ -39,20 +38,25 @@ if ($datos_consulta->num_rows>0){
             <td><?=$Apodo?></td>
             <td><?=$Cedula?></td>
             <td><?=$Hora?></td>
-            <th scope="row" >
-            <button type="button" class="editar-btn" id="open-modal<?=$fila['Id_gamer']?>">Editar</button>
-             </th>
+            <th>
+            <button type="button" class="editar-btn fa-solid fa-pen-to-square" id="open-modal<?=$fila['Id_gamer']?>"></button>
+            </th>
             <th>
             <form method="post" action="../../assets/php/borrar_jugador.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_gamer'];?>">
-		          <input  type="submit" class="delete-btn" value="Eliminar">
-              </form>    
+		          <button class="delete-btn fa-solid fa-trash"></button>
+            </form>    
+            </th>
+            <th>
+            <button type="button" class="sell-btn fa-solid fa-dollar-sign" id="open-modal<?=$fila['Id_gamer']?>"></button>
             </th>
           </tr>
 
-<dialog id="modal-wind<?=$fila['Id_gamer']?>">
+<dialog class="pop" id="modal-wind<?=$fila['Id_gamer']?>">
 
 <div class="pop-up">
+
+<button class="x-btn" id="cerrar-modal<?=$fila['Id_gamer']?>">x</button>
 
 <h2>Editar</h2>
 
@@ -63,10 +67,35 @@ if ($datos_consulta->num_rows>0){
 <input class="dato" type="text" name="Apodo"  placeholder="Apodo del jugador" max="100" value="<?php echo $Apodo?>" required></input><br><br>
 <input class="dato" type="number" name="Cedula"  placeholder="Cedula" value="<?php echo $Cedula?>" required></input><br><br>
 <br>
-<input type="submit" class="btn" value="Editar"></input>
+<input type="submit" class="btn-pop" value="Editar"></input>
 </form>
 <br><br>
+
+</div>
+
+</dialog>
+
+<!-- ----------------------------------------------------------- -->
+
+<dialog class="pop" id="modal-wind<?=$fila['Id_gamer']?>">
+
+<div class="pop-up">
+
 <button class="x-btn" id="cerrar-modal<?=$fila['Id_gamer']?>">x</button>
+
+<h2>Vender Tiempos</h2>
+
+<form action="../../assets/php/editar_jugador.php" method="POST" method="dialog"> 
+<label for=""></label>
+<input type="hidden" name="id" value="<?php echo $fila['Id_gamer'];?>">
+<input class="dato" type="text"   name="Nombre" placeholder="Nombre del jugador"  value="<?php echo $Nombre?>" required></input><br><br>
+<input class="dato" type="text" name="Apodo"  placeholder="Apodo del jugador" max="100" value="<?php echo $Apodo?>" required></input><br><br>
+<input class="dato" type="number" name="Cedula"  placeholder="Cedula" value="<?php echo $Cedula?>" required></input><br><br>
+<br>
+<input type="submit" class="btn-pop" value="Vender"></input>
+</form>
+<br><br>
+
 </div>
 
 </dialog>

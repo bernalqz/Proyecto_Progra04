@@ -3,7 +3,8 @@
 
 
 <div class="title-head">  
-<h2>Restricciones en apuestas de Números</h2>    
+<h2>Restricciones en apuestas de números</h2>    
+<br>
 </div> 
 <!--Formulario-->
 <div class="ventanas">
@@ -104,20 +105,22 @@ if ($datos_consulta->num_rows>0){
             <td><?=$Max?></td>
             <td><?=$Min?></td>
             <th scope="row" >
-            <button type="button" class="editar-btn" id="open-modal<?=$fila['Id_number']?>">Editar</button>
+            <button type="button" class="editar-btn fa-solid fa-pen-to-square" id="open-modal<?=$fila['Id_number']?>"></button>
              </th>
             <th>
             <form method="post" action="../../assets/php/borrar_jugador.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_number'];?>">
-		          <input  type="submit" class="delete-btn" value="Eliminar">
+		          <button class="delete-btn fa-solid fa-trash"></button>
               </form>    
             </th>
           </tr>
 
  <!--Ventana Modal -->         
-<dialog id="modal-wind<?=$fila['Id_number']?>">
+<dialog class="pop" id="modal-wind<?=$fila['Id_number']?>">
 
 <div class="pop-up">
+
+<button class="x-btn" id="cerrar-modal<?=$fila['Id_number']?>">x</button>
 
 <h2>Editar</h2>
 
@@ -136,7 +139,6 @@ if ($datos_consulta->num_rows>0){
 
 
 <br><br>
-<button class="x-btn" id="cerrar-modal<?=$fila['Id_number']?>">x</button>
 </div>
 
 </dialog>

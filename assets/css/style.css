@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
 * {
-
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: "Open Sans", sans-serif;  
+  font-family: "Open Sans", sans-serif;
 }
 
 /*----General-----*/
@@ -146,13 +147,27 @@ overflow-x: hidden;
   text-decoration: none;
   display: inline-block;
   font-size: 15px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   font-weight: bold;
 }
 
 .content-table .delete-btn{
   background-color: rgb(175, 50, 77); 
+  border: 1px solid;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.content-table .sell-btn{
+  background-color: rgb(121, 196, 92); 
   border: 1px solid;
   border-radius: 5px;
   color: rgb(0, 0, 0);
