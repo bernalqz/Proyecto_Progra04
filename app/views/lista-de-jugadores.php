@@ -1,6 +1,6 @@
 <?php include "header.php"?>
 
-<<<<<<< HEAD
+
 <br>
 <br>
 <br>
@@ -8,7 +8,7 @@
 =======
 
 
->>>>>>> 8884fd123c4469d40316afec9489fc08765dc3ef
+
 <table class="content-table">
         <thead>
           <tr>
@@ -49,23 +49,6 @@ if ($datos_consulta->num_rows>0){
               </form>    
             </th>
           </tr>
-<<<<<<< HEAD
-          <tr class="active-row">
-            <td>2</td>
-            <td>Pedro</td>
-            <td>Manudo</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Nick</td>
-            <td>Tristón</td>
-            <td>3</td>
-          </tr>
-        </tbody>
-      </table>
-</div>
-=======
 
 <dialog id="modal-wind<?=$fila['Id_gamer']?>">
 
@@ -111,7 +94,6 @@ $con->close();
 
 
 
->>>>>>> 8884fd123c4469d40316afec9489fc08765dc3ef
 
 
 <?php include "footer.php"?>
