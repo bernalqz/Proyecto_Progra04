@@ -11,7 +11,7 @@ require 'dbconnection.php';
 
 
 
-// Consultar el id por medio del nombre seleccionado que se recibe en POST
+// Consultar el id del sorteo por medio del nombre seleccionado que se recibe en POST
 $sql ="SELECT `Id_raffle` FROM `sorteos` WHERE `Name_raffle` = '$Seleccion_nombre';";
 $result = $con->query($sql);
 $row = $result->fetch_assoc();

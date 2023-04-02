@@ -17,7 +17,7 @@ require 'dbconnection.php';
         }
         else
         {
-            die("Error al ingresar datos: ".$conexion->error);
+            die("Error al ingresar datos: ".$con->error);
         }   
     
 
