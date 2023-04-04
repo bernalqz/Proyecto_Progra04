@@ -6,8 +6,8 @@ if (isset($_POST['id']) && isset($_POST['name'])){
 $Id_gamer = $_POST['id'];
 $Name_gamer = $_POST['name'];
 // Se guardan las varibles en Kookies de 2 minutos:
-setcookie("KIDgamer", $Id_gamer, time() + 120);
-setcookie("KGamerName", $Name_gamer, time() + 120);
+setcookie("KIDgamer", $Id_gamer, time() + 600);
+setcookie("KGamerName", $Name_gamer, time() + 600);
  }
 elseif(isset($_COOKIE["KIDgamer"]) && isset($_COOKIE["KGamerName"])){
 // Se toman las variables por si acaso se recarla la pagina 
