@@ -2,17 +2,15 @@
 if (isset($_POST)){
 $Seleccion_raffle = $_POST['raffle'];
 $Id_gamer = $_POST['id'];
+$Name_gamer = $_POST['name'];
 $Numero = $_POST['number'];
 $Dinero = $_POST['amount'];
 $Id_usser = 1;
 }
+?>
 
-
-
+<?php
 require 'dbconnection.php'; 
-
-
-
 // Consultar el id del sorteo por medio del nombre seleccionado que se recibe en POST
 $sql ="SELECT `Id_raffle` FROM `sorteos` WHERE `Name_raffle` = '$Seleccion_raffle';";
 $result = $con->query($sql);
@@ -28,22 +26,33 @@ $row = $result->fetch_assoc();
 $Maxbet_number = $row['Maxbet_number'];
 $Minbet_number = $row['Minbet_number'];
 
-echo "Para el numero ".$Numero." la restriccion max es ".$Maxbet_number." y la minima es: ".$Minbet_number;
+//echo "Para el numero ".$Numero." la restriccion max es ".$Maxbet_number." y la minima es: ".$Minbet_number;
+
+if($Dinero > $Maxbet_number)
+{
+        $mensaje = "La cantidad de : ₡".$Dinero ."  ingresado supera al máximo de: ₡".$Maxbet_number.
+        " Establecido en el Sorteo ".$Seleccion_raffle;
+        header("Location: ../../app/views/venta-individual.php?mensaje=$mensaje");
+}
+
+elseif ($Dinero < $Minbet_number)
+{
+        $mensaje = "La cantidad de : ₡".$Dinero ." ingresado no llega al mínimo de: ₡".$Minbet_number.
+        " Establecido en el Sorteo ".$Seleccion_raffle;
+
+        header("Location: ../../app/views/venta-individual.php?mensaje=$mensaje");
+}
+
+else{
+
+echo "La apuesta se puede realizar";
 
 
+}
 
-
-/* Prueba de POST
-echo $Id_raffle;
-echo "<br>";
-echo  $Seleccion_raffle;
-echo "<br>";
-echo $Id_gamer;
-echo "<br>";
-echo $Numero;
-echo "<br>";
-echo $Dinero;
-*/
+$con->close();
+?>
+<?php
 /*
 // Crea la Venta global (factura) y obtiene el id Generado
 
@@ -83,6 +92,6 @@ require 'dbconnection.php';
 
 
 
-$con->close();
+//$con->close();
 
  ?>

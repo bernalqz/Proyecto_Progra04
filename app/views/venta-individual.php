@@ -2,11 +2,35 @@
 
 <?php
 
-if (isset($_POST)){
+if (isset($_POST['id']) && isset($_POST['name'])){
 $Id_gamer = $_POST['id'];
 $Name_gamer = $_POST['name'];
-    }
+// Se guardan las varibles en Kookies de 2 minutos:
+setcookie("KIDgamer", $Id_gamer, time() + 120);
+setcookie("KGamerName", $Name_gamer, time() + 120);
+ }
+elseif(isset($_COOKIE["KIDgamer"]) && isset($_COOKIE["KGamerName"])){
+// Se toman las variables por si acaso se recarla la pagina 
+  $Id_gamer= $_COOKIE["KIDgamer"];
+  $Name_gamer= $_COOKIE["KGamerName"];
 
+  if(isset($_GET['mensaje']))
+  {
+    $Mensaje = $_GET['mensaje'];
+    //echo $Mensaje;
+
+           
+        print"<script>
+        setTimeout(mensaje,10);
+       function mensaje(){
+        window.alert('$Mensaje');
+       }
+       </script>";
+ }
+}
+
+
+ 
 
 ?>
 <div class="ventanas">
@@ -41,6 +65,7 @@ if($con){
 <br><br>
 <Label >Número a apostar:</Label>
 <input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
+<input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
 <input type="number"  name="number" max="100" required placeholder="Número"></input>
 <br><br>
 <Label >Dinero a apostar: ₡</Label>
