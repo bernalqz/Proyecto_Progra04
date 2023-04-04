@@ -65,6 +65,7 @@ body{
   transition: all 0.5s ease;
   border: none;
   background-color: #1D1B1B;
+  display: block;
 }
 
 .nav-link:hover {

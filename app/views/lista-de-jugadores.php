@@ -1,11 +1,8 @@
 <?php include "header.php"?>
 
-
-<br>
-<br>
-<br>
-<div>
-
+<div class="title-head">  
+<h1>Lista de jugadores</h1>    
+</div> 
 
 <table class="content-table">
         <thead>
@@ -48,7 +45,7 @@ if ($datos_consulta->num_rows>0){
             </form>    
             </th>
             <th>
-            <button type="button" class="sell-btn fa-solid fa-dollar-sign" id="open-modal<?=$fila['Id_gamer']?>"></button>
+            <button type="button" class="sell-btn fa-solid fa-dollar-sign" id="open-modal2<?=$fila['Id_gamer']?>"></button>
             </th>
           </tr>
 
@@ -77,13 +74,13 @@ if ($datos_consulta->num_rows>0){
 
 <!-- ----------------------------------------------------------- -->
 
-<dialog class="pop" id="modal-wind<?=$fila['Id_gamer']?>">
+<dialog class="pop" id="modal-wind2<?=$fila['Id_gamer']?>">
 
 <div class="pop-up">
 
-<button class="x-btn" id="cerrar-modal<?=$fila['Id_gamer']?>">x</button>
+<button class="x-btn" id="cerrar-modal2<?=$fila['Id_gamer']?>">x</button>
 
-<h2>Vender Tiempos</h2>
+<h2>Venta de tiempos</h2>
 
 <form action="../../assets/php/editar_jugador.php" method="POST" method="dialog"> 
 <label for=""></label>
@@ -108,6 +105,12 @@ const btn_close_modal<?=$fila['Id_gamer']?> = document.querySelector("#cerrar-mo
 const modal_editar_sorteo<?=$fila['Id_gamer']?> = document.querySelector("#modal-wind<?=$fila['Id_gamer']?>")
 btn_open_modal<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_gamer']?>.showModal()})
 btn_close_modal<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_gamer']?>.close()})
+
+const btn_open_modal2<?=$fila['Id_gamer']?> = document.querySelector("#open-modal2<?=$fila['Id_gamer']?>");
+const btn_close_modal2<?=$fila['Id_gamer']?> = document.querySelector("#cerrar-modal2<?=$fila['Id_gamer']?>")
+const modal_vender_sorteo<?=$fila['Id_gamer']?> = document.querySelector("#modal-wind2<?=$fila['Id_gamer']?>")
+btn_open_modal2<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_vender_sorteo<?=$fila['Id_gamer']?>.showModal()})
+btn_close_modal2<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_vender_sorteo<?=$fila['Id_gamer']?>.close()})
 </script>
 
 <?php

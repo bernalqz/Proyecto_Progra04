@@ -1,7 +1,7 @@
 <?php include "header.php"?>
 
 <div class="title-head">  
-<h1>Sorteo</h1>    
+<h1>Sorteos</h1>    
 </div> 
 
 <div class="ventanas">

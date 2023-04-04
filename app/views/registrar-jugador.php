@@ -3,7 +3,7 @@
 
 
 <div class="title-head">  
-<h1>Jugador</h1>    
+<h1>Jugadores</h1>    
 </div> 
 
 <div class="ventanas">

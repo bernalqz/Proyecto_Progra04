@@ -3,7 +3,7 @@
 
 
 <div class="title-head">  
-<h2>Restricciones en apuestas de números</h2>    
+<h1>Limite de apuestas</h1>    
 <br>
 </div> 
 <!--Formulario-->
@@ -35,10 +35,9 @@ if($con){
 ?>
 <!--Llenado del Select end-->
 
-
 </select>
 <br><br>
-<input type="number" min="0" max="100" required placeholder="Numero"></input><br><br>
+<input type="number" min="0" max="100" required placeholder="Número"></input><br><br>
 <input type="number" placeholder="Máximo de apuesta"></input><br><br>
 <input type="number" placeholder="Mínimo de apuesta"></input><br><br>
     

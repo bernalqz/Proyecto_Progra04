@@ -1,7 +1,7 @@
 <?php include "header.php"?>
 
 <div class="title-head">  
-<h1>Panel de Juego</h1>    
+<h1>Números ganadores</h1>    
 </div> 
 
 <div class="ventanas">

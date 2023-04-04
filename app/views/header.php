@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/76ceaa8f89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.3">
     
     <title>El Juego de los tiempos</title>
 </head>
@@ -42,7 +42,7 @@
         <a href="registrar-sorteo.php"><button class="nav-link" role="button"><span class="text" >Registro de Sorteos</span></button></a>
         <a href="limites-de-apuesta.php"><button class="nav-link" role="button"><span class="text">Límites de Apuesta</span></button></a>
         <a href="lista-de-jugadores.php"><button class="nav-link" role="button"><span class="text">Lista de Jugadores</span></button></a>
-        <a href="panel-de-juego.php"><button class="nav-link" role="button"><span class="text">Panel del Juego</span></button></a>
+        <a href="panel-de-juego.php"><button class="nav-link" role="button"><span class="text">Números ganadores</span></button></a>
         <a href="log-out.php"><button class="nav-link" role="button"><span class="text">Log Out</span></button></a>
         
     </nav>
