@@ -21,7 +21,7 @@ elseif(isset($_COOKIE["KIDgamer"]) && isset($_COOKIE["KGamerName"])){
 
            
         print"<script>
-        setTimeout(mensaje,10);
+        setTimeout(mensaje,500); // medio segundo
        function mensaje(){
         window.alert('$Mensaje');
        }
