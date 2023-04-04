@@ -1,1 +1,0 @@
-Acción venta vacía 1234

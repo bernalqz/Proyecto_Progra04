@@ -1,30 +1,64 @@
 <?php include "header.php"?>
 
-<div class="title-head">  
-<h1>Venta de Tiempos</h1>    
-</div> 
 
-<div class="ventanas">
-<form action="../../assets/php/venta_de_tiempos.php">
-<label for=""></label>
-<input type="number" placeholder="ID del Jugador"></input><br><br>
-<input type="number" placeholder="Número a apostar"></input><br><br>
-<input type="number" placeholder="Dinero a apostar"></input><br><br>
-
-<label for="">Sorteo: </label>
-<select name="" id="">
-  <option value="">Tica</option>
-  <option value="">Nica</option>
-  <option value="">Panameña</option>
-  <option value="">Hondureña</option>
-</select>
-<br><br>
-    
-<input type="submit" class="btn" value="Registrar"></input>
 <br>
-<input type="submit" class="btn" value="Imprimir"></input>
+<br>
+<br>
+<div>
 
-</form>
-</div>
+
+<table class="content-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apodo</th>
+            <th>Cedula</th>
+            <th>Vender</th>   
+                   
+          </tr>
+        </thead>
+        <tbody>
+<?php
+require '../../assets/php/dbconnection.php';
+if($con){
+$consulta_jugador = 'SELECT * FROM jugadores';
+$datos_consulta = $con->query($consulta_jugador);
+if ($datos_consulta->num_rows>0){
+    $contador=0;
+    while($fila=$datos_consulta->fetch_assoc()){
+        $Id_gamer = $fila['Id_gamer'];
+        $Nombre = $fila['Name_gamer'];
+        $Apodo = $fila['Nick_gamer'];
+        $Cedula = $fila['Ced_gamer'];
+        $Hora = $fila['Time_gamer'];
+        ?>
+         <tr>
+            <td><?=$Nombre?></td>
+            <td><?=$Apodo?></td>
+            <td><?=$Cedula?></td>
+              <td>
+            <form method="post" action="../../app/views/venta-individual.php">
+              <input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
+              <input type="hidden" name="name" value="<?php echo $Nombre;?>">
+		          <button class="sell-btn fa-solid fa-dollar-sign"></button>
+            </form>    
+            </td>
+            
+          </tr>
+
+<?php
+     } // aqui finaliza el while
+  }
+}
+$con->close();
+?>
+
+</tbody>
+</table>
+<!-- LLenado de la tabla end-->
+
+
+
+
 
 <?php include "footer.php"?>

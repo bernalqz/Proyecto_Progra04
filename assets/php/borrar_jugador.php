@@ -3,6 +3,8 @@
     include("dbconnection.php");
     
     $ID = $_POST['id'];
+    
+
 
     $sql = "DELETE FROM jugadores WHERE Id_gamer = '$ID'";
     $result = mysqli_query($con, $sql);
@@ -20,5 +22,4 @@
             </script>
         ");
     }   
-
 ?>

@@ -1,4 +1,3 @@
-
 <?php include "header.php"?>
 
 
@@ -7,15 +6,14 @@
 <br>
 </div> 
 <!--Formulario-->
-<div class="ventanas">
-<form action="../../assets/php/limite_de_apuesta.php" method="POST">
+<div>
+<form  class="ventanas" action="../../assets/php/limite_de_apuesta.php" method="POST">
 <label for=""></label>
 
 
-<label for="">Sorteos: </label>
-<select name="seleccion" id="">
-  
+<label for="">Sorteo: </label>
 <!--Llenado del Select-->
+<select name="seleccion" id="">
 <?php
 require '../../assets/php/dbconnection.php';
 if($con){
@@ -31,15 +29,18 @@ if($con){
 
 <?php
       }}}
-
+      $con->close();
 ?>
 <!--Llenado del Select end-->
 
 </select>
+
+<!--Llenado del Select end-->
 <br><br>
-<input type="number" min="0" max="100" required placeholder="Número"></input><br><br>
-<input type="number" placeholder="Máximo de apuesta"></input><br><br>
-<input type="number" placeholder="Mínimo de apuesta"></input><br><br>
+
+<input type="number" name="numero" min="0" max="100" required placeholder="Número a limitar"></input><br><br>
+<input type="number" name="MaxSorteo"  placeholder="Límite máximo de dinero" required></input><br><br>
+<input type="number" name="MinSorteo"  placeholder="Límite mínimo de dinero" required></input><br><br>
     
 <input type="submit" class="btn" value="Registrar"></input>
 
@@ -93,8 +94,6 @@ if ($datos_consulta->num_rows>0){
   $veces = $row['Times_raffle'];
   //echo $Id_raffle;
   // Consulta sorteo y veces end
-
-
          ?>
          <tr>
             
@@ -104,40 +103,54 @@ if ($datos_consulta->num_rows>0){
             <td><?=$Max?></td>
             <td><?=$Min?></td>
             <th scope="row" >
-            <button type="button" class="editar-btn fa-solid fa-pen-to-square" id="open-modal<?=$fila['Id_number']?>"></button>
+            <button type="button" class="editar-btn" id="open-modal<?=$fila['Id_number']?>">Editar</button>
              </th>
             <th>
-            <form method="post" action="../../assets/php/borrar_jugador.php">
-              <input type="hidden" name="id" value="<?php echo $fila['Id_number'];?>">
-		          <button class="delete-btn fa-solid fa-trash"></button>
+            <form method="POST" action="../../assets/php/borrar_limite.php">
+              <input type="hidden" name="idNumber" value="<?php echo $fila['Id_number'];?>">
+              <input type="hidden" name="id-raffle" value="<?php echo $fila['Id_raffle_number'];?>">
+		          <input  type="submit" class="delete-btn" value="Eliminar">
               </form>    
             </th>
           </tr>
 
  <!--Ventana Modal -->         
-<dialog class="pop" id="modal-wind<?=$fila['Id_number']?>">
+<dialog class="pop"  id="modal-wind<?=$fila['Id_number']?>">
 
 <div class="pop-up">
-
 <button class="x-btn" id="cerrar-modal<?=$fila['Id_number']?>">x</button>
-
 <h2>Editar</h2>
 
-
-
-<form action="../../assets/php/editar_limites_de_apuesta.php" method="POST" method="dialog"> 
+<!--Form del modal -->
+<form action="../../assets/php/editar_limites.php" method="POST" method="dialog"> 
 <label for=""></label>
-<input type="hidden" name="id" value="<?php echo $fila['Id_number'];?>">
-<input class="dato" type="text"   name="Nombre" placeholder="Nombre del jugador"  value="<?php echo $Nombre?>" required></input><br><br>
-<input class="dato" type="text" name="Apodo"  placeholder="Apodo del jugador" max="100" value="<?php echo $Apodo?>" required></input><br><br>
-<input class="dato" type="number" name="Cedula"  placeholder="Cedula" value="<?php echo $Cedula?>" required></input><br><br>
-<br>
-<input type="submit" class="btn" value="Editar"></input>
-</form>
 
 
-
+<label for="">Sorteo: </label>
+<select name="seleccion" id="">
+  <option value="<?php echo $Name_raffle?>"><?php echo $Name_raffle?></option>
+</select>
 <br><br>
+<input type="hidden" name="id" value="<?php echo $fila['Id_number'];?>">
+<label >Número: </label>
+<input type="number" name="numero"  value="<?php echo $Numero?>" min="0" max="100" required placeholder="Número a limitar" readonly ></input><br><br>
+<label >Máximo de apostar: </label>
+<input type="number" name="MaxSorteo"  value="<?php echo $Max?>"placeholder="Límite máximo de dinero" required></input><br>
+<label >Mínimo de apostar: </label>
+<input type="number" name="MinSorteo"  value="<?php echo $Min?>"placeholder="Límite mínimo de dinero" required></input><br><br>
+
+<!--Form del modal ends-->
+
+
+
+<br>
+
+<input type="submit" class="btn" value="Editar"></input>
+<br><br>
+
+</form>
+<br><br>
+
 </div>
 
 </dialog>
@@ -147,9 +160,9 @@ if ($datos_consulta->num_rows>0){
 <script>
 const btn_open_modal<?=$fila['Id_number']?> = document.querySelector("#open-modal<?=$fila['Id_number']?>");
 const btn_close_modal<?=$fila['Id_number']?> = document.querySelector("#cerrar-modal<?=$fila['Id_number']?>")
-const modal_editar_sorteo<?=$fila['Id_number']?> = document.querySelector("#modal-wind<?=$fila['Id_number']?>")
-btn_open_modal<?=$fila['Id_number']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_number']?>.showModal()})
-btn_close_modal<?=$fila['Id_number']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_number']?>.close()})
+const modal_editar_apuesta<?=$fila['Id_number']?> = document.querySelector("#modal-wind<?=$fila['Id_number']?>")
+btn_open_modal<?=$fila['Id_number']?>.addEventListener("click",()=>{modal_editar_apuesta<?=$fila['Id_number']?>.showModal()})
+btn_close_modal<?=$fila['Id_number']?>.addEventListener("click",()=>{modal_editar_apuesta<?=$fila['Id_number']?>.close()})
 </script>
 
 <?php
