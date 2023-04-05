@@ -5,15 +5,17 @@
 <h1>Limite de apuestas</h1>    
 <br>
 </div> 
+
 <!--Formulario-->
 <div>
 <form  class="ventanas" action="../../assets/php/limite_de_apuesta.php" method="POST">
 <label for=""></label>
 
 
-<label for="">Sorteo: </label>
+<label for="">Sorteo:</label>
 <!--Llenado del Select-->
 <select name="seleccion" id="">
+  
 <?php
 require '../../assets/php/dbconnection.php';
 if($con){
@@ -38,21 +40,20 @@ if($con){
 <!--Llenado del Select end-->
 <br><br>
 
-<input type="number" name="numero" min="0" max="100" required placeholder="Número a limitar"></input><br><br>
-<input type="number" name="MaxSorteo"  placeholder="Límite máximo de dinero" required></input><br><br>
-<input type="number" name="MinSorteo"  placeholder="Límite mínimo de dinero" required></input><br><br>
+<label>Número límite:</label>
+<input type="number" name="numero" min="0" max="100" required></input><br><br>
+<label>Límite máximo de dinero:</label>
+<input type="number" name="MaxSorteo" required></input><br><br>
+<label>Límite mínimo de dinero:</label>
+<input type="number" name="MinSorteo" required></input><br><br>
     
 <input type="submit" class="btn" value="Registrar"></input>
-
 </form>
 </div>
 
-
-
-
-
 <!--Llenado de la tabla-->
 
+<div class="tabla-contenedor2">
 <table class="content-table">
         <thead>
           <tr>
@@ -72,8 +73,6 @@ require '../../assets/php/dbconnection.php';
 
 
 if($con){
-
-
 
 $consulta_numeros = "SELECT * FROM `numeros` WHERE Limited_number = 1";
 $datos_consulta = $con->query($consulta_numeros);
@@ -103,25 +102,23 @@ if ($datos_consulta->num_rows>0){
             <td><?=$Max?></td>
             <td><?=$Min?></td>
             <th scope="row" >
-            <button type="button" class="editar-btn" id="open-modal<?=$fila['Id_number']?>">Editar</button>
+            <button type="button" class="editar-btn fa-solid fa-pen-to-square" id="open-modal<?=$fila['Id_number']?>"></button>
              </th>
             <th>
-            <form method="POST" action="../../assets/php/borrar_limite.php">
               <input type="hidden" name="idNumber" value="<?php echo $fila['Id_number'];?>">
               <input type="hidden" name="id-raffle" value="<?php echo $fila['Id_raffle_number'];?>">
-		          <input  type="submit" class="delete-btn" value="Eliminar">
-              </form>    
+		          <button class="delete-btn fa-solid fa-trash" id="open-modal2<?=$fila['Id_number']?>"></button>
             </th>
           </tr>
 
  <!--Ventana Modal -->         
-<dialog class="pop"  id="modal-wind<?=$fila['Id_number']?>">
+<dialog class="pop-up"  id="modal-wind<?=$fila['Id_number']?>">
 
-<div class="pop-up">
 <button class="x-btn" id="cerrar-modal<?=$fila['Id_number']?>">x</button>
 <h2>Editar</h2>
 
 <!--Form del modal -->
+
 <form action="../../assets/php/editar_limites.php" method="POST" method="dialog"> 
 <label for=""></label>
 
@@ -132,30 +129,40 @@ if ($datos_consulta->num_rows>0){
 </select>
 <br><br>
 <input type="hidden" name="id" value="<?php echo $fila['Id_number'];?>">
-<label >Número: </label>
-<input type="number" name="numero"  value="<?php echo $Numero?>" min="0" max="100" required placeholder="Número a limitar" readonly ></input><br><br>
-<label >Máximo de apostar: </label>
-<input type="number" name="MaxSorteo"  value="<?php echo $Max?>"placeholder="Límite máximo de dinero" required></input><br>
-<label >Mínimo de apostar: </label>
-<input type="number" name="MinSorteo"  value="<?php echo $Min?>"placeholder="Límite mínimo de dinero" required></input><br><br>
+<label>Número límite:</label>
+<input type="number" name="numero"  value="<?php echo $Numero?>" min="0" max="100" required readonly ></input><br><br>
+<label>Máximo de apostar:</label>
+<input type="number" name="MaxSorteo"  value="<?php echo $Max?>" required></input><br><br>
+<label>Mínimo de apostar:</label>
+<input type="number" name="MinSorteo"  value="<?php echo $Min?>" required></input><br><br>
 
 <!--Form del modal ends-->
 
-
-
-<br>
-
-<input type="submit" class="btn" value="Editar"></input>
-<br><br>
+<input type="submit" class="btn-pop" value="Editar"></input>
 
 </form>
 <br><br>
 
-</div>
+</dialog>
+
+<!--Ventana Modal editar end-->
+
+<!--Ventana Modal eliminar-->
+
+<dialog class="pop-up-alert" id="modal-wind2<?=$fila['Id_number']?>">
+
+<form action="../../assets/php/borrar_limite.php" method="POST" method="dialog">
+
+<h2>Desea eliminar la apuesta?</h2>
+ 
+<input type="hidden" name="idNumber" value="<?php echo $fila['Id_number'];?>"><br>
+<button type="submit" class="btn-pop">Eliminar</button>
+</form>
+<button class="btn-pop" id="cerrar-modal2<?=$fila['Id_number']?>">Cancelar</button>
 
 </dialog>
 
-<!--Ventana Modal end-->
+<!--Ventana Modal eliminar end-->
 
 <script>
 const btn_open_modal<?=$fila['Id_number']?> = document.querySelector("#open-modal<?=$fila['Id_number']?>");
@@ -163,6 +170,12 @@ const btn_close_modal<?=$fila['Id_number']?> = document.querySelector("#cerrar-m
 const modal_editar_apuesta<?=$fila['Id_number']?> = document.querySelector("#modal-wind<?=$fila['Id_number']?>")
 btn_open_modal<?=$fila['Id_number']?>.addEventListener("click",()=>{modal_editar_apuesta<?=$fila['Id_number']?>.showModal()})
 btn_close_modal<?=$fila['Id_number']?>.addEventListener("click",()=>{modal_editar_apuesta<?=$fila['Id_number']?>.close()})
+
+const btn_open_modal2<?=$fila['Id_number']?> = document.querySelector("#open-modal2<?=$fila['Id_number']?>");
+const btn_close_modal2<?=$fila['Id_number']?> = document.querySelector("#cerrar-modal2<?=$fila['Id_number']?>")
+const modal_eliminar_apuesta<?=$fila['Id_number']?> = document.querySelector("#modal-wind2<?=$fila['Id_number']?>")
+btn_open_modal2<?=$fila['Id_number']?>.addEventListener("click",()=>{modal_eliminar_apuesta<?=$fila['Id_number']?>.showModal()})
+btn_close_modal2<?=$fila['Id_number']?>.addEventListener("click",()=>{modal_eliminar_apuesta<?=$fila['Id_number']?>.close()})
 </script>
 
 <?php
@@ -172,9 +185,10 @@ btn_close_modal<?=$fila['Id_number']?>.addEventListener("click",()=>{modal_edita
 $con->close();
 ?>
 
-</tbody>
 </table>
+</div>
+</tbody>
 <!-- LLenado de la tabla end-->
 
 
-    <?php include "footer.php"?>
+  <?php include "footer.php"?>

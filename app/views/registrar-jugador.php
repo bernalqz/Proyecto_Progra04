@@ -3,23 +3,26 @@
 
 
 <div class="title-head">  
-<h1>Jugadores</h1>    
+<h1>Registrar jugador</h1>  
+<br>  
 </div> 
 
 <div class="ventanas">
 <form action="../../assets/php/registrar_jugador.php" method="POST">
-<label for=""></label>
-<input type="text" name="Nombre" placeholder="Nombre" required></input><br><br>
-<input type="text" name="Apodo" placeholder="Apodo" required></input><br><br>
-<input type="text" name="Cedula" placeholder="Cédula" required></input><br><br>
-
-</select>
+<label>Nombre:</label>
+<input type="text" name="Nombre" required></input><br><br>
+<label>Apodo:</label>
+<input type="text" name="Apodo" required></input><br><br>
+<label>Cedula:</label>
+<input type="text" name="Cedula" required></input><br><br>
 
 <input type="submit" class="btn" value="Registrar"></input>
-
 </form>
 </div>
+
 <!--Tabla-->
+
+<div class="tabla-contenedor2">
 <table class="content-table">
         <thead>
           <tr>
@@ -54,16 +57,14 @@ if ($datos_consulta->num_rows>0){
             <button type="button" class="editar-btn fa-solid fa-pen-to-square" id="open-modal<?=$fila['Id_gamer']?>"></button>
              </th>
             <th>
-            <form method="post" action="../../assets/php/borrar_jugador.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_gamer'];?>">
-		          <button class="delete-btn fa-solid fa-trash"></button>
-              </form>    
+		          <button class="delete-btn fa-solid fa-trash" id="open-modal2<?=$fila['Id_gamer']?>"></button>   
             </th>
           </tr>
 
-<dialog class="pop" id="modal-wind<?=$fila['Id_gamer']?>">
+<!--Ventana Modal editar-->
 
-<div class="pop-up">
+<dialog class="pop-up" id="modal-wind<?=$fila['Id_gamer']?>">
 
 <button class="x-btn" id="cerrar-modal<?=$fila['Id_gamer']?>">x</button>
 
@@ -72,18 +73,35 @@ if ($datos_consulta->num_rows>0){
 <form action="../../assets/php/editar_jugador.php" method="POST" method="dialog"> 
 <label for=""></label>
 <input type="hidden" name="id" value="<?php echo $fila['Id_gamer'];?>">
-<input type="text"   name="Nombre" placeholder="Nombre del jugador"  value="<?php echo $Nombre?>" required></input><br><br>
-<input type="text" name="Apodo"  placeholder="Apodo del jugador" max="100" value="<?php echo $Apodo?>" required></input><br><br>
-<input type="number" name="Cedula"  placeholder="Cedula" value="<?php echo $Cedula?>" required></input><br><br>
-<br>
+<label>Nombre:</label>
+<input type="text" name="Nombre" value="<?php echo $Nombre?>" required></input><br><br>
+<label>Apodo:</label>
+<input type="text" name="Apodo" max="100" value="<?php echo $Apodo?>" required></input><br><br>
+<label>Cedula:</label>
+<input type="number" name="Cedula" value="<?php echo $Cedula?>" required></input><br><br>
 <input type="submit" class="btn-pop" value="Editar"></input>
 </form>
 
-</div>
+</dialog>
+
+<!--Ventana Modal editar end-->
+
+<!--Ventana Modal eliminar-->
+
+<dialog class="pop-up-alert" id="modal-wind2<?=$fila['Id_gamer']?>">
+
+<form action="../../assets/php/borrar_jugador.php" method="POST" method="dialog">
+
+<h2>Desea eliminar este jugador?</h2>
+ 
+<input type="hidden" name="id" value="<?php echo $fila['Id_gamer'];?>"><br>
+<button type="submit" class="btn-pop">Eliminar</button>
+</form>
+<button class="btn-pop" id="cerrar-modal2<?=$fila['Id_gamer']?>">Cancelar</button>
 
 </dialog>
 
-<!--Ventana Modal end-->
+<!--Ventana Modal eliminar end-->
 
 <script>
 const btn_open_modal<?=$fila['Id_gamer']?> = document.querySelector("#open-modal<?=$fila['Id_gamer']?>");
@@ -91,6 +109,12 @@ const btn_close_modal<?=$fila['Id_gamer']?> = document.querySelector("#cerrar-mo
 const modal_editar_sorteo<?=$fila['Id_gamer']?> = document.querySelector("#modal-wind<?=$fila['Id_gamer']?>")
 btn_open_modal<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_gamer']?>.showModal()})
 btn_close_modal<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_editar_sorteo<?=$fila['Id_gamer']?>.close()})
+
+const btn_open_modal2<?=$fila['Id_gamer']?> = document.querySelector("#open-modal2<?=$fila['Id_gamer']?>");
+const btn_close_modal2<?=$fila['Id_gamer']?> = document.querySelector("#cerrar-modal2<?=$fila['Id_gamer']?>")
+const modal_eliminar_sorteo<?=$fila['Id_gamer']?> = document.querySelector("#modal-wind2<?=$fila['Id_gamer']?>")
+btn_open_modal2<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_eliminar_sorteo<?=$fila['Id_gamer']?>.showModal()})
+btn_close_modal2<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_eliminar_sorteo<?=$fila['Id_gamer']?>.close()})
 </script>
 
 <?php
@@ -100,8 +124,9 @@ btn_close_modal<?=$fila['Id_gamer']?>.addEventListener("click",()=>{modal_editar
 $con->close();
 ?>
 
-</tbody>
 </table>
+</div>
+</tbody>
 <!-- LLenado de la tabla end-->
 
 

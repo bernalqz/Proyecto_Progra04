@@ -83,20 +83,25 @@ top: 45px;
 
 .game .ventanas{
   position: relative;
-  left: 250px;
+  left: 33%;
 }
 
 .game h1{
-margin-bottom: 15px;
-position: relative;
-left: 45px;
+  margin-bottom: 15px;
+  position: relative;
+  left: 45px;
+}
+
+label{
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .game .btn{
-  margin-bottom: 15px;
+  margin: 15px 0;
   position: relative;
-  left: 27px;
-  }
+  left: 32px;
+}
 
 /*scroll bar */
 
@@ -130,6 +135,7 @@ overflow-x: hidden;
   border: none;
   border-radius: 5px;
   color: white;
+  margin-top: 20px;
   padding: 9px 20px;
   text-align: center;
   text-decoration: none;
@@ -185,6 +191,21 @@ overflow-x: hidden;
 
 /*Tabla*/
 
+.tabla-contenedor{
+  position: relative;
+  left: 22%;
+}
+
+.tabla-contenedor2{
+  position: relative;
+  left: 8%;
+}
+
+.tabla-contenedor3{
+  position: relative;
+  left: 14%;
+}
+
 .content-table {
   border-collapse: collapse;
   margin: 25px 30px;
@@ -223,39 +244,58 @@ overflow-x: hidden;
 /*Pop-up*/
 
 .pop-up{
-  width: 300px;
-  height: 350px;
+  width: 330px;
+  height: 330px;
   border: none;
   border-radius: 3px;
   overflow: hidden;
   overflow-x: none;
-  padding: 10px 20px;
-  justify-content: center;
   text-align: center;
-}
 
-.pop-up h2{
-  margin-top: 25px;
-  margin-bottom: 15px;
-}
-
-.x-btn{
-  position: relative;
-  left: 125px;
-  border: none;
-  font-weight: bold;
-  font-size: 25px;
-  color: #0a0a0a;
-  background-color: #fff;
-}
-
-.pop{
   position: relative;
   left: 41%;
   top: 25%;
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.pop-up input{
+  width: 110px;
+}
+
+.pop-up-alert{
+  width: 330px;
+  height: 155px;
+  border: none;
+  border-radius: 3px;
+  overflow: hidden;
+  overflow-x: none;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+
+  position: relative;
+  left: 41%;
+  top: 40%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.pop-up h2{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.x-btn{
+  position: relative;
+  left: 140px;
+  border: none;
+  font-weight: bold;
+  font-size: 25px;
+  color: #0a0a0a;
+  background-color: #fff;
 }
 
 /*Pop-up-end*/

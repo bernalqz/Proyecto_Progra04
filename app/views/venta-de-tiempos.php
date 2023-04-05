@@ -1,12 +1,11 @@
 <?php include "header.php"?>
 
-
+<div class="title-head">  
+<h1>Venta de tiempos</h1>    
 <br>
-<br>
-<br>
-<div>
+</div> 
 
-
+<div class="tabla-contenedor">
 <table class="content-table">
         <thead>
           <tr>
@@ -55,6 +54,8 @@ $con->close();
 
 </tbody>
 </table>
+</div>
+
 <!-- LLenado de la tabla end-->
 
 

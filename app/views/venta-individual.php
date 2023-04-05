@@ -35,8 +35,10 @@ elseif(isset($_COOKIE["KIDgamer"]) && isset($_COOKIE["KGamerName"])){
 ?>
 <div class="ventanas">
 <div class="title-head">  
-<h2>Venta de Números</h2><br>    
+<h1>Venta de Números</h1><br>
+<br>    
 </div>     
+
 <form action="../../assets/php/venta_individual.php" method="POST">
 <Label>Nombre:</Label>
 <input type="text"value="<?php echo $Name_gamer;?>" readonly></input><br><br>
@@ -66,12 +68,13 @@ if($con){
 <Label >Número a apostar:</Label>
 <input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
 <input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
-<input type="number"  name="number" max="100" required placeholder="Número"></input>
+<input type="number"  name="number" max="100" required></input>
 <br><br>
-<Label >Dinero a apostar: ₡</Label>
-<input name="amount" required placeholder="₡" type="number"></input><br><br>
+<Label >Dinero a apostar:</Label>
+<input name="amount" required type="number"></input><label> ₡</label><br><br>
 
-<input type="submit" class="btn" value="Agregar Apuesta"></input>
+<input type="submit" class="btn" value="Agregar apuesta"></input>
+<a href="venta-de-tiempos.php" type="submit" class="btn">Atras</a>
 </form> 
 </div>
 
