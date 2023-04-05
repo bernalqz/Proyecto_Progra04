@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/76ceaa8f89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.3">
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.5">
     
     <title>El Juego de los tiempos</title>
 </head>
 <body>
 <div class="logo">
 <img src="../../assets/lotto.png">
+<header>Sorteo.com</header>
 </div>
 <div class="dinero">
 <img src="../../assets/dinero.png">
