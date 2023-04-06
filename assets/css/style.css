@@ -42,10 +42,10 @@ body{
 
 .navbar
 {
-  width: 200px;
+  width: 220px;
   height: 100%;
   background-color: #1D1B1B;
-  padding: 40px 22px;
+  padding: 40px 20px;
   text-align: center;
   border-radius: 3px 0px 0px 3px;
   display: block;
@@ -60,7 +60,7 @@ body{
   text-decoration: none;
   outline: none;
   overflow: hidden;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 3px;
   cursor: pointer;
@@ -319,14 +319,14 @@ overflow-x: hidden;
     position: relative;
     left: 125px;
     top: -22px;
-    color: #fff;
+    color: #009879;
     transition: 0.3s ease;
     cursor: pointer;
     width: 20px;
   }
 
   header:hover {
-    color: #fff786;
+    color: #bbbbbb;
   }
 
   .dinero img{
@@ -392,3 +392,26 @@ overflow-x: hidden;
   input:focus{
     border: 1px solid #1D1B1B;
   }
+
+ /*Numero random*/
+
+ .random_ball{
+    background: #2C3E50;  
+    background: -webkit-linear-gradient(to right, #FD746C, #2C3E50);  
+    background: linear-gradient(to right, #FD746C, #2C3E50); 
+    border: 2.5px solid #050505;
+    font-size: 3.5rem;
+    width: 95px;
+    height: 95px;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    position: relative;
+    left: 34px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  /*Numero random-final*/
