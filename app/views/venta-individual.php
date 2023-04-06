@@ -29,9 +29,6 @@ elseif(isset($_COOKIE["KIDgamer"]) && isset($_COOKIE["KGamerName"])){
  }
 }
 
-
- 
-
 ?>
 <div class="ventanas">
 <div class="title-head">  
@@ -41,7 +38,7 @@ elseif(isset($_COOKIE["KIDgamer"]) && isset($_COOKIE["KGamerName"])){
 
 <form action="../../assets/php/venta_individual.php" method="POST">
 <Label>Nombre:</Label>
-<input type="text"value="<?php echo $Name_gamer;?>" readonly></input><br><br>
+<input type="text" value="<?php echo $Name_gamer;?>" readonly></input><br><br>
 <Label>Seleccione el sorteo:</Label>
 
 <!--Llenado del Select-->
