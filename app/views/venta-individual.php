@@ -70,8 +70,9 @@ if($con){
 <Label >Dinero a apostar:</Label>
 <input name="amount" required type="number"></input><label> ₡</label><br><br>
 
+<a href="venta-de-tiempos.php" type="submit" class="fa-regular fa-arrow-left btn" style="color: #ffffff;"></a>
+
 <input type="submit" class="btn" value="Agregar apuesta"></input>
-<a href="venta-de-tiempos.php" type="submit" class="btn">Atras</a>
 </form> 
 </div>
 

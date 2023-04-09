@@ -42,11 +42,11 @@ body{
 
 .navbar
 {
-  width: 220px;
+  width: 200px;
   height: 100%;
   background-color: #1D1B1B;
   padding: 40px 20px;
-  text-align: center;
+  text-align: left;
   border-radius: 3px 0px 0px 3px;
   display: block;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
@@ -58,11 +58,9 @@ body{
   color: #fff;
   height: 70px;
   text-decoration: none;
-  outline: none;
-  overflow: hidden;
-  font-size: 16px;
+  font-size: 16.5px;
   font-weight: bold;
-  margin-bottom: 3px;
+  margin: 5px 0px;
   cursor: pointer;
   transition: all 0.5s ease;
   border: none;
@@ -125,6 +123,7 @@ overflow-x: hidden;
   color: white;
   padding: 12px 22px;
   text-align: center;
+  justify-content: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;

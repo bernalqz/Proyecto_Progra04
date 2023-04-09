@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/76ceaa8f89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.1">
     
     <title>El Juego de los tiempos</title>
 </head>
@@ -37,14 +37,14 @@
 
     <nav class="navbar">
         
-        <a href="index.php"><button class="nav-link" role="button"><span class="text">Home</span></button></a>
-        <a href="venta-de-tiempos.php"><button class="nav-link" role="button"><span class="text">Venta de Tiempos</span></button></a>
-        <a href="registrar-jugador.php"><button class="nav-link" role="button"><span class="text" >Registrar Jugador</span></button></a>
-        <a href="registrar-sorteo.php"><button class="nav-link" role="button"><span class="text" >Registro de Sorteos</span></button></a>
-        <a href="limites-de-apuesta.php"><button class="nav-link" role="button"><span class="text">Límites de Apuesta</span></button></a>
-        <a href="lista-de-jugadores.php"><button class="nav-link" role="button"><span class="text">Lista de Jugadores</span></button></a>
-        <a href="panel-de-juego.php"><button class="nav-link" role="button"><span class="text">Números ganadores</span></button></a>
-        <a href="log-out.php"><button class="nav-link" role="button"><span class="text">Log Out</span></button></a>
+        <a href="index.php" class="nav-link">Home</a>
+        <a href="venta-de-tiempos.php" class="nav-link">Venta de Tiempos</a>
+        <a href="registrar-jugador.php" class="nav-link">Registrar Jugador</a>
+        <a href="registrar-sorteo.php" class="nav-link">Registro de Sorteos</a>
+        <a href="limites-de-apuesta.php" class="nav-link">Límites de Apuesta</a>
+        <a href="lista-de-jugadores.php" class="nav-link">Lista de Jugadores</a>
+        <a href="panel-de-juego.php" class="nav-link">Número ganador</a>
+        <a href="log-out.php" class="nav-link">Log Out</a>
         
     </nav>
     <div class="game">
