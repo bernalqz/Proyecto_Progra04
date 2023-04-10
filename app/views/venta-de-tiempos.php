@@ -1,5 +1,24 @@
 <?php include "header.php"?>
 
+<?php
+if(isset($_GET['mensaje']))
+  {
+    $Mensaje = $_GET['mensaje'];
+    //echo $Mensaje;
+
+           
+        print"<script>
+        setTimeout(mensaje,500); // medio segundo
+       function mensaje(){
+        window.alert('$Mensaje');
+       }
+       </script>";
+ }
+ ?>
+
+
+
+
 <div class="title-head">  
 <h1>Venta de tiempos</h1>    
 <br>

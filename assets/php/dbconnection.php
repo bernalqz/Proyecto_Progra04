@@ -1,6 +1,14 @@
 <?php
 
-    $Server = "localhost";
+
+
+
+
+
+
+
+
+$Server = "localhost";
     $User = "root";
     $Password = "Admin";
     $DB = "proyecto_progra04";
@@ -20,8 +28,8 @@
         window.alert('Conexión Exitosa A la base de datos');
        }
        </script>";
-       */
        
+      */ 
     }
   
 ?>

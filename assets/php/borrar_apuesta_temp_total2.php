@@ -2,16 +2,13 @@
 
     include("dbconnection.php");
     
-    $ID = $_POST['id'];
-    
-
-
-    $sql = "DELETE FROM jugadores WHERE Id_gamer = '$ID'";
+   
+    $sql = "TRUNCATE TABLE apuestas_temp;";
     $result = mysqli_query($con, $sql);
 
     if($result)
     {
-        HEADER("Location: ../../app/views/registrar-jugador.php");
+        HEADER("Location: ../../app/views/venta-individual.php");
     }
     else
     {
@@ -21,6 +18,7 @@
                 window.history.go(-1);
             </script>
         ");
-    }  
- $con->close(); 
+    }   
+
+    $con->close();
 ?>

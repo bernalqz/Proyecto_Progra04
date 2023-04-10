@@ -42,7 +42,7 @@
         <a href="registrar-jugador.php" class="nav-link">Registrar Jugador</a>
         <a href="registrar-sorteo.php" class="nav-link">Registro de Sorteos</a>
         <a href="limites-de-apuesta.php" class="nav-link">Límites de Apuesta</a>
-        <a href="lista-de-jugadores.php" class="nav-link">Lista de Jugadores</a>
+        <a href="lista-de-ventas.php" class="nav-link">Lista de Ventas</a>
         <a href="panel-de-juego.php" class="nav-link">Número ganador</a>
         <a href="log-out.php" class="nav-link">Log Out</a>
         

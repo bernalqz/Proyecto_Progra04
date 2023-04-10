@@ -18,6 +18,16 @@ $row = $result->fetch_assoc();
 $Id_raffle = $row['Id_raffle'];
 //------ end
 
+// Consultar el id del numero por medio del numero seleccionado que se recibe en POST
+$sql ="SELECT `Id_number` FROM `numeros` WHERE `Number_number` = '$Numero';";
+$result = $con->query($sql);
+$row = $result->fetch_assoc();
+$IdNumero = $row['Id_number'];
+//------ end
+
+
+
+
 //<!--Validación de restricciones de apuesta consulta restricciones:
 
 $sql ="SELECT * FROM `numeros` WHERE `Id_raffle_number` = '$Id_raffle' AND `Number_number` = '$Numero';";
@@ -45,53 +55,14 @@ elseif ($Dinero < $Minbet_number)
 
 else{
 
-echo "La apuesta se puede realizar";
+//echo "La apuesta se puede realizar";
 
 
+$sql="INSERT INTO `apuestas_temp`(`Name_gamer_temp`, `Id_raffle_bet_temp`, `Name_raffle_temp`,`Id_number_bet_temp`,`Number_temp`, `Money_bet_temp`,`Active_temp`) 
+VALUES ('$Name_gamer','$Id_raffle','$Seleccion_raffle','$IdNumero','$Numero','$Dinero','1')";
+$result = $con->query($sql);
+header("Location: ../../app/views/venta-individual.php");
 }
 
 $con->close();
 ?>
-<?php
-/*
-// Crea la Venta global (factura) y obtiene el id Generado
-
-        $sql = "INSERT INTO ventas (Id_gamer_sales, Id_usser_sales)
-                VALUES ('$Id_gamer', '$Id_usser')";
-
-        if ($con->query($sql)===true) 
-        {
-            $last_id = $con->insert_id;
-        }
-        else
-        {
-            die("Error al ingresar datos: ".$con->error);
-        }   
-
-
-// Crea la venta Individual en la BD con la ID de la Factura
-
-require 'dbconnection.php';
-
-        $sql = "INSERT INTO apuestas (Name_gamer, Nick_gamer, Ced_gamer)
-                VALUES ('$Nombre', '$Apodo', '$Cedula')";
-
-        if ($con->query($sql)===true) 
-        {
-           HEADER("Location: ../../app/views/registrar-jugador.php");
-        }
-        else
-        {
-            die("Error al ingresar datos: ".$conexion->error);
-        }   
-
-
-*/
-
-
-
-
-
-//$con->close();
-
- ?>

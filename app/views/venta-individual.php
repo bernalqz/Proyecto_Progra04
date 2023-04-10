@@ -6,8 +6,8 @@ if (isset($_POST['id']) && isset($_POST['name'])){
 $Id_gamer = $_POST['id'];
 $Name_gamer = $_POST['name'];
 // Se guardan las varibles en Kookies de 2 minutos:
-setcookie("KIDgamer", $Id_gamer, time() + 600);
-setcookie("KGamerName", $Name_gamer, time() + 600);
+setcookie("KIDgamer", $Id_gamer, time() + 1200);
+setcookie("KGamerName", $Name_gamer, time() + 1200);
  }
 elseif(isset($_COOKIE["KIDgamer"]) && isset($_COOKIE["KGamerName"])){
 // Se toman las variables por si acaso se recarla la pagina 
@@ -29,6 +29,24 @@ elseif(isset($_COOKIE["KIDgamer"]) && isset($_COOKIE["KGamerName"])){
  }
 }
 
+// Para el borrado de la tabla temporal: apuestas_temp en caso de recarga de la pagina con otro cliente o jugador:  
+
+require '../../assets/php/dbconnection.php';
+$Name_gamerBD = $Name_gamer;
+$sql = "SELECT Name_gamer_temp FROM apuestas_temp WHERE Name_gamer_temp != '$Name_gamer'";
+$result = mysqli_query($con, $sql);
+$row = $result->fetch_assoc();
+if($row){
+$Name_gamerBD = $row['Name_gamer_temp'];
+}
+if($Name_gamerBD!=$Name_gamer){
+  HEADER("Location: ../../assets/php/borrar_apuesta_temp_total2.php");
+}
+$con->close();
+// Fin del borrado
+
+
+// Formulario
 ?>
 <div class="ventanas">
 <div class="title-head">  
@@ -70,11 +88,83 @@ if($con){
 <Label >Dinero a apostar:</Label>
 <input name="amount" required type="number"></input><label> ₡</label><br><br>
 
-<a href="venta-de-tiempos.php" type="submit" class="fa-regular fa-arrow-left btn" style="color: #ffffff;"></a>
+<a href="../../assets/php/borrar_apuesta_temp_total.php" type="submit" class="fa-regular fa-arrow-left btn" style="color: #ffffff;"></a>
 
 <input type="submit" class="btn" value="Agregar apuesta"></input>
 </form> 
 </div>
+
+<!--TABLA-->
+
+
+
+<div class="tabla-contenedor">
+
+<h2>Apuestas:</h2> 
+
+<table class="content-table">
+  
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Sorteo</th>
+            <th>Número</th>
+            <th>Dinero</th>    
+            <th>Eliminar</th>       
+          </tr>
+        </thead>
+        <tbody>
+<?php
+require '../../assets/php/dbconnection.php';
+if($con){
+$consulta_apuesta = 'SELECT * FROM apuestas_temp';
+$datos_consulta = $con->query($consulta_apuesta);
+if ($datos_consulta->num_rows>0){
+    $contador=0;
+    while($fila=$datos_consulta->fetch_assoc()){
+        $Id_temp = $fila['Id_temp'];
+        $Name_gamer_temp = $fila['Name_gamer_temp'];
+        $Name_raffle_temp = $fila['Name_raffle_temp'];
+        $Number_temp = $fila['Number_temp'];
+        $Money_bet_temp = $fila['Money_bet_temp'];
+        ?>
+         <tr>
+            <td><?=$Name_gamer_temp?></td>
+            <td><?=$Name_raffle_temp?></td>
+            <td><?=$Number_temp?></td>
+            <td><?=$Money_bet_temp?></td>
+            <td>
+            <form method="post" action="../../assets/php/borrar_apuesta_temporal.php">
+              <input type="hidden" name="id" value="<?php echo $fila['Id_temp'];?>">
+		          <button class="delete-btn fa-solid fa-trash"></button>
+            </form>    
+            </td>
+          </tr>
+
+<?php
+     } // aqui finaliza el while
+  }
+}
+$con->close();
+?>
+
+</tbody>
+</table>
+
+</div>
+
+<center>
+  
+<form method="post" action="../../assets/php/realizar_venta.php">
+<input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
+<input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
+<input type="submit" class="btn" value="Realizar la venta"></input>
+</form> 
+<a href="../../assets/php/borrar_apuesta_temp_total.php" type="submit" class="fa-regular fa-arrow-left btn" style="color: #ffffff;"></a>
+</center>
+
+<!-- LLenado de la tabla end-->
+<!--TABLA-->
 
 
 
