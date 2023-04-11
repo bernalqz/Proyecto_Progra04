@@ -3,13 +3,7 @@
 <div class="title-head">  
 <h1>Ventas Realizadas:</h1>    
 </div> 
-
-
-
 <!--TABLA-->
-
-
-
 <div class="tabla-contenedor">
 
 <h2>Apuestas:</h2> 
@@ -22,7 +16,7 @@
             <th>Sorteo</th>
             <th>Número</th>
             <th>Dinero</th>    
-            <th>Activo</th>       
+            <th>Jugado</th>       
           </tr>
         </thead>
         <tbody>
@@ -40,13 +34,15 @@ if ($datos_consulta->num_rows>0){
         $Number = $fila['Number_bet'];
         $Money_bet = $fila['Money_bet'];
         $Active = $fila['Active'];
+        if($Active==1){$Jugado="NO";}
+        else{$Jugado="SI";}
         ?>
          <tr>
             <td><?=$Name_gamer?></td>
             <td><?=$Name_raffle?></td>
             <td><?=$Number?></td>
-            <td><?=$Money_bet?></td>
-            <td><?=$Active?></td>
+            <td><?="₡".$Money_bet?></td>
+            <td><?=$Jugado?></td>
             
           </tr>
 
@@ -61,9 +57,6 @@ $con->close();
 </table>
 
 </div>
-
-
-
 <!-- LLenado de la tabla end-->
 <!--TABLA-->
 

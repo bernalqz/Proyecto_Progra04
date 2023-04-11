@@ -1,54 +1,177 @@
 <?php include "header.php"?>
+<?php
+$Aleatorio = 0;
+if(isset($_GET['aleatorio']))
+  {
+    $Aleatorio = $_GET['aleatorio'];
 
-<div class="title-head">  
-<h1>Número ganador</h1>    
-</div> 
+ }
+
+ if(isset($_GET['mensaje']))
+ {
+   $Mensaje = $_GET['mensaje'];
+   //echo $Mensaje;
+
+          
+       print"<script>
+       setTimeout(mensaje,500); // medio segundo
+      function mensaje(){
+       window.alert('$Mensaje');
+      }
+      </script>";
+}
+
+
+
+
+ ?>
+
+
 
 <div class="ventanas">
 
+<div class="title-head">  
+<h1>Número Ganador:</h1>    
+</div> 
 <div>
-  <h3 class="random_ball" id=ball>0</h3><br>
+  <h3 class="random_ball"><?php echo $Aleatorio ?></h3><br>
 </div>
 
-<button class="btn" id="button-run">Sortear</button><br><br>
 
 
-<form action="../../assets/php/panel_de_juego.php">
+<a href="../../assets/php/numero_aleatorio.php"><button class="btn">Generar Aleatorio</button></a>
+
+
+<form action="../../assets/php/realizar_sorteo.php" method="POST">
 <label for="">Número ganador:</label>
-<input type="number" min="0" max="100" required></input><br><br>
+<input type="number" min="0" max="100" name="numero" value="<?php echo $Aleatorio ?>"required></input><br><br>
+
+<!--Llenado del Select end-->
 <label for="">Sorteo:</label>
-<select name="" id="">
-<option value="">A Todas</option>  
-  <option value="">Tica</option>
-  <option value="">Nica</option>
-  <option value="">Panameña</option>
-  <option value="">Hondureña</option>
+<select name="seleccion" id="">
+  <?php
+require '../../assets/php/dbconnection.php';
+if($con){
+  $consulta_sorteos = 'SELECT * FROM sorteos';
+  $datos_consulta = $con->query($consulta_sorteos);
+  if ($datos_consulta->num_rows>0){
+      $contador=0;
+      while($fila=$datos_consulta->fetch_assoc()){
+          
+          $Nombre_raffle = $fila['Name_raffle'];
+?>
+  <option value="<?=$Nombre_raffle?>"><?=$Nombre_raffle?></option>
+
+<?php
+      }}}
+      $con->close();
+?>
 </select>
-<br><br>
-<label for="">Lista de Ganadores:</label>
-<br><br>  <br><br> 
-<label for=""> Espacio para mostrar Lista de Ganadores</label> 
-<br><br> 
-<input type="submit" class="btn" value="Ganadores"></input>
+<!--Llenado del Select end-->
+<br>
+<input type="hidden"  value="">
+<input type="submit" class="btn" value="Jugar el número"></input>
 </form>
 </div>
 
-<script>
+<?php
 
-  const my_ball = document.getElementById("ball");
+/*
+// Realiza la comprobación de que la tabla tenga datos
+require '../../assets/php/dbconnection.php';
+$sql = "SELECT COUNT(*) FROM apuestas";
 
-  const button_run = document.getElementById("button-run");
+$resultado = $con->query($sql);
 
-  const random_num_generator = () => {
-     
-    const random_num = Math.floor(Math.random() * 100 + 1);
-    ball.textContent = random_num;
+if ($resultado === false) {
+    echo 'Error al ejecutar la consulta: ';
+    exit;
+}
+$filas = mysqli_fetch_row($resultado);
+$numero_registros = $filas[0];
 
-  };
+if ($numero_registros == 0) {
+    $mensaje ="Debe de realizar una venta al menos!";
+    header("Location: ../../app/views/venta-individual.php?mensaje=$mensaje");
 
-  button_run.addEventListener('click', random_num_generator);
-  random_num_generator();
+} 
+// Realiza la comprobación de que la tabla temporal tenga datos end
 
-</script>
+*/
+?>
+
+<!--TABLA-->
+<div class="tabla-contenedor">
+<br>
+<h2>Ganadores pendiente de pago:</h2> 
+
+<table class="content-table">
+  
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Sorteo</th>
+            <th>Número</th>
+            <th>Dinero</th>    
+            <th>Veces</th>
+            <th>Premio</th>
+            <th>Pagar</th>
+                   
+          </tr>
+        </thead>
+        <tbody>
+<?php
+require '../../assets/php/dbconnection.php';
+if($con){
+$consulta_apuesta = 'SELECT * FROM apuestas';
+$datos_consulta = $con->query($consulta_apuesta);
+if ($datos_consulta->num_rows>0){
+    $contador=0;
+    while($fila=$datos_consulta->fetch_assoc()){
+        $Id = $fila['Id_bet'];
+        $Name_gamer = $fila['Name_gamer_bet'];
+        $Name_raffle = $fila['Name_raffle_bet'];
+        $Number = $fila['Number_bet'];
+        $Money_bet = $fila['Money_bet'];
+        $Veces = $fila['Times_raffle_bet'];
+        $Active = $fila['Active'];
+        $Ganador = $fila['Ganador_bet'];
+        $Premio = $fila['Premio_bet'];
+        // Filtra solamente los ganadores
+        if($Ganador==1){ 
+?>
+         <tr>
+            <td><?=$Name_gamer?></td>
+            <td><?=$Name_raffle?></td>
+            <td><?=$Number?></td>
+            <td><?="₡".$Money_bet?></td>
+            <td><?=$Veces?></td>
+            <td><?=$Premio?></td>
+            <td>
+            <form method="POST" action="../../assets/php/pagar_premio.php">
+              <input type="hidden" name="id" value="<?php echo $fila['Id_bet'];?>">
+              <input type="hidden" name="name" value="<?php echo $fila['Name_gamer_bet'];?>">
+              <input type="button" value="">
+		          <button class="sell-btn fa-solid fa-dollar-sign"></button>
+            </form>    
+            </td>
+            
+          </tr>
+
+<?php
+     }} // aqui finaliza el while
+  }
+}
+$con->close();
+?>
+
+</tbody>
+</table>
+
+</div>
+<!-- LLenado de la tabla end-->
+<!--TABLA-->
+
+
 
 <?php include "footer.php"?>

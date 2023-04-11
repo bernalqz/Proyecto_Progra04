@@ -43,8 +43,8 @@ else
 }
 
 // Se transfiere los datos de la tabla apuestas temporal a la normal
-$sql="INSERT INTO apuestas (Id_sales_bet,Id_raffle_bet,Id_number_bet,Name_gamer_bet,Name_raffle_bet,Number_bet,Money_bet,Active)
-SELECT $last_id_sales,Id_raffle_bet_temp, Id_number_bet_temp, Name_gamer_temp,  Name_raffle_temp,  Number_temp, Money_bet_temp, Active_temp FROM apuestas_temp;";
+$sql="INSERT INTO apuestas (Id_sales_bet,Id_raffle_bet,Times_raffle_bet,Id_number_bet,Name_gamer_bet,Name_raffle_bet,Number_bet,Money_bet,Active)
+SELECT $last_id_sales,Id_raffle_bet_temp,Times_raffle_temp,Id_number_bet_temp,Name_gamer_temp,Name_raffle_temp,Number_temp, Money_bet_temp, Active_temp FROM apuestas_temp;";
 if ($con->query($sql)===true) 
 {
 // Para obtener el ID del dato recientemente ingresado

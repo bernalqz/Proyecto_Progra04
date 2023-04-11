@@ -4,12 +4,12 @@
     
     $ID = $_POST['id'];
 
-    $sql = "DELETE FROM sorteos WHERE Id_raffle = '$ID'";
+    $sql = "DELETE FROM ventas WHERE Id_sales = '$ID'";
     $result = mysqli_query($con, $sql);
 
     if($result)
     {
-        HEADER("Location: ../../app/views/registrar-sorteo.php");
+        HEADER("Location: ../../app/views/lista-de-facturas.php");
     }
     else
     {

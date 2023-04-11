@@ -25,6 +25,14 @@ $row = $result->fetch_assoc();
 $IdNumero = $row['Id_number'];
 //------ end
 
+// Consultar el $Times_raffle del numero por medio del Id_raffle
+$sql ="SELECT `Times_raffle` FROM `sorteos` WHERE `Id_raffle` = '$Id_raffle';";
+$result = $con->query($sql);
+$row = $result->fetch_assoc();
+$Times_raffle = $row['Times_raffle'];
+//------ end
+
+
 
 
 
@@ -58,8 +66,8 @@ else{
 //echo "La apuesta se puede realizar";
 
 
-$sql="INSERT INTO `apuestas_temp`(`Name_gamer_temp`, `Id_raffle_bet_temp`, `Name_raffle_temp`,`Id_number_bet_temp`,`Number_temp`, `Money_bet_temp`,`Active_temp`) 
-VALUES ('$Name_gamer','$Id_raffle','$Seleccion_raffle','$IdNumero','$Numero','$Dinero','1')";
+$sql="INSERT INTO `apuestas_temp`(`Name_gamer_temp`, `Id_raffle_bet_temp`,`Times_raffle_temp`, `Name_raffle_temp`,`Id_number_bet_temp`,`Number_temp`, `Money_bet_temp`,`Active_temp`) 
+VALUES ('$Name_gamer','$Id_raffle','$Times_raffle','$Seleccion_raffle','$IdNumero','$Numero','$Dinero','1')";
 $result = $con->query($sql);
 header("Location: ../../app/views/venta-individual.php");
 }

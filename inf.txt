@@ -52,12 +52,16 @@ Time_sale
 5.apuestas
 Id_bet <PK>
 Id_sales_bet  <FK>
-Id_raffle_bet <FK>
+Id_raffle_bet
+Times_raffle_bet
 Id_number_bet <FK>
 Name_gamer_bet
+Name_raffle_bet
 Number_bet
 Money_bet
 Active
+Ganador_bet
+Premio_bet
 Time_bet
 
 6.numeros
@@ -67,17 +71,19 @@ Id_raffle_number <FK>
 Number_number
 Maxbet_number
 Minbet_number
-Limited_number   (Le agregué este campo nuevo)
+Limited_number 
 Time_number
 
 7. apuestas_temp
 Id_temp   <PK>
 Name_gamer_temp
 Id_raffle_bet_temp
+Times_raffle_temp
 Name_raffle_temp
 Id_number_bet_temp
 Number_temp
 Money_bet_temp
 Active_temp
+
 
 
