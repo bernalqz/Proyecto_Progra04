@@ -49,8 +49,9 @@ $con->close();
 // Formulario
 ?>
 <div class="ventanas">
+
 <div class="title-head">  
-<h1>Venta de Números</h1><br>
+<h1>Venta de números</h1><br>
 <br>    
 </div>     
 
@@ -87,8 +88,6 @@ if($con){
 <br><br>
 <Label >Dinero a apostar:</Label>
 <input name="amount" required type="number"></input><label> ₡</label><br><br>
-
-<a href="../../assets/php/borrar_apuesta_temp_total.php" type="submit" class="fa-regular fa-arrow-left btn" style="color: #ffffff;"></a>
 
 <input type="submit" class="btn" value="Agregar apuesta"></input>
 </form> 
@@ -128,18 +127,38 @@ if ($datos_consulta->num_rows>0){
         $Number_temp = $fila['Number_temp'];
         $Money_bet_temp = $fila['Money_bet_temp'];
         ?>
-         <tr>
+          <tr>
             <td><?=$Name_gamer_temp?></td>
             <td><?=$Name_raffle_temp?></td>
             <td><?=$Number_temp?></td>
             <td><?=$Money_bet_temp?></td>
             <td>
-            <form method="post" action="../../assets/php/borrar_apuesta_temporal.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_temp'];?>">
-		          <button class="delete-btn fa-solid fa-trash"></button>
+		          <button class="delete-btn fa-solid fa-trash" id="open-modal2<?=$fila['Id_temp']?>"></button>
             </form>    
             </td>
           </tr>
+
+<dialog class="pop-up-alert" id="modal-wind2<?=$fila['Id_temp']?>">
+
+<form method="post" action="../../assets/php/borrar_apuesta_temporal.php">
+
+<h2>Desea eliminar esta venta?</h2>
+ 
+<input type="hidden" name="id" value="<?php echo $fila['Id_temp'];?>"><br>
+<button type="submit" class="btn-pop">Eliminar</button>
+</form>
+<button class="btn-pop" id="cerrar-modal2<?=$fila['Id_temp']?>">Cancelar</button>
+
+</dialog>
+
+<script>
+const btn_open_modal2<?=$fila['Id_temp']?> = document.querySelector("#open-modal2<?=$fila['Id_temp']?>");
+const btn_close_modal2<?=$fila['Id_temp']?> = document.querySelector("#cerrar-modal2<?=$fila['Id_temp']?>")
+const modal_eliminar_sorteo<?=$fila['Id_temp']?> = document.querySelector("#modal-wind2<?=$fila['Id_temp']?>")
+btn_open_modal2<?=$fila['Id_temp']?>.addEventListener("click",()=>{modal_eliminar_sorteo<?=$fila['Id_temp']?>.showModal()})
+btn_close_modal2<?=$fila['Id_temp']?>.addEventListener("click",()=>{modal_eliminar_sorteo<?=$fila['Id_temp']?>.close()})
+</script>
 
 <?php
      } // aqui finaliza el while

@@ -1,8 +1,11 @@
 <?php include "header.php"?>
 
+<div class="ventanas">
 <div class="title-head">  
-<h1>Ventas Realizadas:</h1>    
+<h1>Ventas realizadas</h1>    
 </div> 
+</div>
+
 <!--TABLA-->
 <div class="tabla-contenedor">
 

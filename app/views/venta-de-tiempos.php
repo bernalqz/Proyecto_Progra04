@@ -16,13 +16,12 @@ if(isset($_GET['mensaje']))
  }
  ?>
 
-
-
-
-<div class="title-head">  
+<div class="ventanas">
+ <div class="title-head">  
 <h1>Venta de tiempos</h1>    
 <br>
-</div> 
+</div>
+</div>
 
 <div class="tabla-contenedor">
 <table class="content-table">

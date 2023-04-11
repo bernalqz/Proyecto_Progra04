@@ -1,14 +1,14 @@
 <?php include "header.php"?>
 
+<!--Formulario-->
+<div class="ventanas">
 
 <div class="title-head">  
-<h1>Limite de apuestas</h1>    
+<h1>Límite de apuestas</h1>    
 <br>
 </div> 
 
-<!--Formulario-->
-<div>
-<form  class="ventanas" action="../../assets/php/limite_de_apuesta.php" method="POST">
+<form action="../../assets/php/limite_de_apuesta.php" method="POST">
 <label for=""></label>
 
 

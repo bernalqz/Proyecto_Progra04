@@ -45,7 +45,7 @@ body{
   width: 200px;
   height: 100%;
   background-color: #1D1B1B;
-  padding: 40px 20px;
+  padding: 35px 20px;
   text-align: left;
   border-radius: 3px 0px 0px 3px;
   display: block;
@@ -56,11 +56,11 @@ body{
 
 .nav-link {
   color: #fff;
-  height: 70px;
+  height: 50px;
   text-decoration: none;
+  margin: 15px 0px;
   font-size: 16.5px;
   font-weight: bold;
-  margin: 5px 0px;
   cursor: pointer;
   transition: all 0.5s ease;
   border: none;
@@ -83,7 +83,7 @@ top: 45px;
 
 .game .ventanas{
   position: relative;
-  left: 33%;
+  left: 31%;
 }
 
 .game h1{
@@ -188,6 +188,20 @@ overflow-x: hidden;
   font-weight: bold;
 }
 
+.content-table .print-btn{
+  background-color: rgb(75, 194, 241); 
+  border: 1px solid;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 /*botones-end*/
 
 /*Tabla*/
@@ -199,7 +213,7 @@ overflow-x: hidden;
 
 .tabla-contenedor2{
   position: relative;
-  left: 7%;
+  left: 8%;
 }
 
 .tabla-contenedor3{
@@ -409,7 +423,7 @@ overflow-x: hidden;
     padding: 15px;
     border-radius: 50%;
     position: relative;
-    left: 29.5px;
+    left: 70px;
     margin-top: 20px;
     font-weight: bold;
   }

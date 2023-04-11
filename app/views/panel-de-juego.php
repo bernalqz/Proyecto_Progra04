@@ -22,28 +22,20 @@ if(isset($_GET['aleatorio']))
 }
 
 
-
-
- ?>
-
-
+?>
 
 <div class="ventanas">
 
-<div class="title-head">  
-<h1>Número Ganador:</h1>    
-</div> 
 <div>
   <h3 class="random_ball"><?php echo $Aleatorio ?></h3><br>
 </div>
 
 
 
-<a href="../../assets/php/numero_aleatorio.php"><button class="btn">Generar Aleatorio</button></a>
-
+<a href="../../assets/php/numero_aleatorio.php"><button class="btn">Generar Aleatorio</button></a><br><br>
 
 <form action="../../assets/php/realizar_sorteo.php" method="POST">
-<label for="">Número ganador:</label>
+<label for="">Número ganador: </label>
 <input type="number" min="0" max="100" name="numero" value="<?php echo $Aleatorio ?>"required></input><br><br>
 
 <!--Llenado del Select end-->
@@ -69,8 +61,8 @@ if($con){
 </select>
 <!--Llenado del Select end-->
 <br>
-<input type="hidden"  value="">
-<input type="submit" class="btn" value="Jugar el número"></input>
+<input type="hidden"  value=""><br>
+<input type="submit" class="btn" value="Jugar número"></input>
 </form>
 </div>
 
@@ -101,12 +93,11 @@ if ($numero_registros == 0) {
 ?>
 
 <!--TABLA-->
-<div class="tabla-contenedor">
+<div class="tabla-contenedor3">
 <br>
 <h2>Ganadores pendiente de pago:</h2> 
 
-<table class="content-table">
-  
+<table class="content-table"> 
         <thead>
           <tr>
             <th>Cliente</th>

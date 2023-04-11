@@ -1,12 +1,13 @@
 <?php include "header.php"?>
 
+<div class="ventanas">
 <div class="title-head">  
-<h1>Facturas Realizadas:</h1>    
+<h1>Facturas realizadas</h1>    
 </div> 
+</div> 
+
 <!--TABLA-->
-<div class="tabla-contenedor">
-
-
+<div class="tabla-contenedor3">
 
 <table class="content-table">
   
@@ -48,7 +49,7 @@ if ($datos_consulta->num_rows>0){
             <td>
             <form method="post" action="../../assets/php/imprimir_factura.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_sales'];?>">
-		          <button class="delete-btn fa-solid fa-trash"></button>
+              <button class="print-btn fa-solid fa-print"></button>
             </form>    
             </td>
           </tr>

@@ -1,13 +1,13 @@
 
 <?php include "header.php"?>
 
+<div class="ventanas">
 
 <div class="title-head">  
 <h1>Registrar jugador</h1>  
 <br>  
 </div> 
 
-<div class="ventanas">
 <form action="../../assets/php/registrar_jugador.php" method="POST">
 <label>Nombre:</label>
 <input type="text" name="Nombre" required></input><br><br>

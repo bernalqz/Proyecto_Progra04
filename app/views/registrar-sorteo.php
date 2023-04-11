@@ -1,10 +1,11 @@
 <?php include "header.php"?>
 
+<div class="ventanas">
+
 <div class="title-head">  
 <h1>Registro de sorteos</h1>    
 </div> 
 
-<div class="ventanas">
 <form action="../../assets/php/registrar_sorteo.php" method="POST"> 
 <label>Nombre del sorteo:</label>
 <input type="text"   name="NombreSorteo"></input><br><br>

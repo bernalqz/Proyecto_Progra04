@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/76ceaa8f89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.1">
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.7">
     
     <title>El Juego de los tiempos</title>
 </head>
@@ -44,7 +44,7 @@
         <a href="limites-de-apuesta.php" class="nav-link">Límites de Apuesta</a>
         <a href="lista-de-ventas.php" class="nav-link">Lista de Apuestas</a>
         <a href="lista-de-facturas.php" class="nav-link">Lista de Facturas</a>
-        <a href="panel-de-juego.php" class="nav-link">Número ganador</a>
+        <a href="panel-de-juego.php" class="nav-link">Número Ganador</a>
         <a href="log-out.php" class="nav-link">Log Out</a>
         
     </nav>
