@@ -429,3 +429,29 @@ overflow-x: hidden;
   }
 
   /*Numero random-final*/
+
+  /*Alertas*/
+.good-msg{
+    margin: 3px;
+    display: block;
+    background: #009879;
+    color:#fff;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px 0px;
+    text-align: center;
+ }
+
+ .error-msg{
+  margin: 3px;
+  display:block;
+  background: #bb3535;
+  color:#fff;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 5px 0px;
+  text-align: center;
+}
+
+
+ /*Alertas*/

@@ -47,7 +47,7 @@ if ($datos_consulta->num_rows>0){
             </form>    
             </td>
             <td>
-            <form method="post" action="../../assets/php/imprimir_factura.php">
+            <form method="post" action="../../fpdf/ticket.php" target="_blank">
               <input type="hidden" name="id" value="<?php echo $fila['Id_sales'];?>">
               <button class="print-btn fa-solid fa-print"></button>
             </form>    

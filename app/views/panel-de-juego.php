@@ -7,20 +7,13 @@ if(isset($_GET['aleatorio']))
 
  }
 
- if(isset($_GET['mensaje']))
+if(isset($_GET['mensaje']))
  {
    $Mensaje = $_GET['mensaje'];
-   //echo $Mensaje;
+   //echo $Mensaje; 
+   echo '<span class="good-msg">'.$Mensaje.'</span>';
 
-          
-       print"<script>
-       setTimeout(mensaje,500); // medio segundo
-      function mensaje(){
-       window.alert('$Mensaje');
-      }
-      </script>";
 }
-
 
 ?>
 
@@ -29,8 +22,6 @@ if(isset($_GET['aleatorio']))
 <div>
   <h3 class="random_ball"><?php echo $Aleatorio ?></h3><br>
 </div>
-
-
 
 <a href="../../assets/php/numero_aleatorio.php"><button class="btn">Generar Aleatorio</button></a><br><br>
 
@@ -64,6 +55,8 @@ if($con){
 <input type="hidden"  value=""><br>
 <input type="submit" class="btn" value="Jugar número"></input>
 </form>
+<br>
+<h2>Ganadores pendiente de pago</h2> 
 </div>
 
 <?php
@@ -93,9 +86,7 @@ if ($numero_registros == 0) {
 ?>
 
 <!--TABLA-->
-<div class="tabla-contenedor3">
-<br>
-<h2>Ganadores pendiente de pago:</h2> 
+<div class="tabla-contenedor2">
 
 <table class="content-table"> 
         <thead>
@@ -142,7 +133,6 @@ if ($datos_consulta->num_rows>0){
             <form method="POST" action="../../assets/php/pagar_premio.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_bet'];?>">
               <input type="hidden" name="name" value="<?php echo $fila['Name_gamer_bet'];?>">
-              <input type="button" value="">
 		          <button class="sell-btn fa-solid fa-dollar-sign"></button>
             </form>    
             </td>

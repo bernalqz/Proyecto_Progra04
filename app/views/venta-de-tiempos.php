@@ -5,14 +5,7 @@ if(isset($_GET['mensaje']))
   {
     $Mensaje = $_GET['mensaje'];
     //echo $Mensaje;
-
-           
-        print"<script>
-        setTimeout(mensaje,500); // medio segundo
-       function mensaje(){
-        window.alert('$Mensaje');
-       }
-       </script>";
+    echo '<span class="error-msg">'.$Mensaje.'</span>';
  }
  ?>
 

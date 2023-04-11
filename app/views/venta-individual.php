@@ -14,18 +14,11 @@ elseif(isset($_COOKIE["KIDgamer"]) && isset($_COOKIE["KGamerName"])){
   $Id_gamer= $_COOKIE["KIDgamer"];
   $Name_gamer= $_COOKIE["KGamerName"];
 
-  if(isset($_GET['mensaje']))
+if(isset($_GET['mensaje']))
   {
     $Mensaje = $_GET['mensaje'];
     //echo $Mensaje;
-
-           
-        print"<script>
-        setTimeout(mensaje,500); // medio segundo
-       function mensaje(){
-        window.alert('$Mensaje');
-       }
-       </script>";
+    echo '<span class="error-msg">'.$Mensaje.'</span>';
  }
 }
 
@@ -99,8 +92,6 @@ if($con){
 
 <div class="tabla-contenedor">
 
-<h2>Apuestas:</h2> 
-
 <table class="content-table">
   
         <thead>
@@ -173,7 +164,6 @@ $con->close();
 </div>
 
 <center>
-  
 <form method="post" action="../../assets/php/realizar_venta.php">
 <input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
 <input type="hidden" name="name" value="<?php echo $Name_gamer;?>">

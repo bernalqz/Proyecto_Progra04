@@ -3,7 +3,8 @@
 <div class="ventanas">
 
 <div class="title-head">  
-<h1>Registro de sorteos</h1>    
+<h1>Registro de sorteos</h1> 
+<br>   
 </div> 
 
 <form action="../../assets/php/registrar_sorteo.php" method="POST"> 

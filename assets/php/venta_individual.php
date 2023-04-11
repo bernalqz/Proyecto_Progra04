@@ -48,15 +48,15 @@ $Minbet_number = $row['Minbet_number'];
 
 if($Dinero > $Maxbet_number)
 {
-        $mensaje = "Para el número: ".$Numero.", la cantidad de : ₡".$Dinero ."  ingresado supera al máximo de: ₡"
-        .$Maxbet_number." Establecido en el Sorteo ".$Seleccion_raffle;
+        $mensaje = "Para el número ".$Numero.", la cantidad de ₡".$Dinero ."  ingresada supera al máximo de ₡"
+        .$Maxbet_number." establecido en el Sorteo ".$Seleccion_raffle;
         header("Location: ../../app/views/venta-individual.php?mensaje=$mensaje");
 }
 
 elseif ($Dinero < $Minbet_number)
 {
-        $mensaje = "Para el número: ".$Numero.", la cantidad de : ₡".$Dinero ." ingresado no llega al mínimo de: ₡"
-        .$Minbet_number." Establecido en el Sorteo ".$Seleccion_raffle;
+        $mensaje = "Para el número ".$Numero.", la cantidad de ₡".$Dinero ." ingresada no llega al mínimo de ₡"
+        .$Minbet_number." establecido en el Sorteo ".$Seleccion_raffle;
 
         header("Location: ../../app/views/venta-individual.php?mensaje=$mensaje");
 }

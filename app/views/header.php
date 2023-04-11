@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/76ceaa8f89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.7">
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.3">
     
-    <title>El Juego de los tiempos</title>
+    <title>Tiempos</title>
 </head>
 <body>
 <div class="logo">
