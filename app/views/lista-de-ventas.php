@@ -9,7 +9,7 @@
 <!--TABLA-->
 <div class="tabla-contenedor">
 
-<h2>Apuestas:</h2> 
+<h2>Apuestas:</h2>
 
 <table class="content-table">
   
@@ -39,6 +39,7 @@ if ($datos_consulta->num_rows>0){
         $Active = $fila['Active'];
         if($Active==1){$Jugado="NO";}
         else{$Jugado="SI";}
+
         ?>
          <tr>
             <td><?=$Name_gamer?></td>
@@ -63,8 +64,41 @@ $con->close();
 <!-- LLenado de la tabla end-->
 <!--TABLA-->
 
+<?php
+require '../../assets/php/dbconnection.php';
 
+    $consulta_apuesta = 'SELECT * FROM apuestas';
+    $datos_consulta = $con->query($consulta_apuesta);
+     
+      $total1 = 0;
+      $total2 = 0;
+    
+        while($fila = $datos_consulta->fetch_assoc()){
+    
+          $total1 = $fila['Id_bet'];
+          $total2 = $total2 + $fila['Money_bet'];
 
+        }
 
+        echo "Jugadores totales: " .$total1;
+        echo "<br><br>";
+        echo "Ventas totales: ₡" .$total2;
+        echo "<br><br>";
+
+    $consulta_apuesta = 'SELECT * FROM sorteos';
+    $datos_consulta = $con->query($consulta_apuesta);
+
+    $total = 0;
+
+    while($fila = $datos_consulta->fetch_assoc()){
+
+    $total = $total + $fila['Id_raffle']; 
+
+    }
+
+    echo "Total de sorteos: " .$total;
+
+    $con->close();
+?>
 
 <?php include "footer.php"?>
