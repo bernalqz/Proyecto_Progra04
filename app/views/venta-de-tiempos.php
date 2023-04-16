@@ -5,7 +5,7 @@ if(isset($_GET['mensaje']))
   {
     $Mensaje = $_GET['mensaje'];
     //echo $Mensaje;
-    echo '<span class="error-msg">'.$Mensaje.'</span>';
+    echo '<span class="good-msg">'.$Mensaje.'</span>';
  }
  ?>
 

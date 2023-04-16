@@ -169,7 +169,7 @@ $con->close();
 <input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
 <input type="submit" class="btn" value="Realizar la venta"></input>
 </form> 
-<a href="../../assets/php/borrar_apuesta_temp_total.php" type="submit" class="fa-regular fa-arrow-left btn" style="color: #ffffff;"></a>
+<a href="../../app/views/venta-de-tiempos.php" type="submit" class="fa-regular fa-arrow-left btn" style="color: #ffffff;"></a>
 </center>
 
 <!-- LLenado de la tabla end-->
