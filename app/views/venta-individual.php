@@ -81,10 +81,14 @@ if($con){
 <br><br>
 <Label>Dinero a apostar:</Label>
 <input name="amount" required type="number"></input><label> ₡</label><br><br>
-
-<input type="submit" class="btn" value="Agregar"></input>
-<input type="submit" class="btn" value="Vender"></input>
+<input type="submit" class="btn" value="Agregar número"></input>
 </form> 
+
+<form method="post" action="../../assets/php/realizar_venta.php">
+<input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
+<input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
+<input type="submit" class="btn" value="Vender número"></input>
+</form>
 </div>
 
 <!--TABLA-->
@@ -162,13 +166,6 @@ $con->close();
 </tbody>
 </table>
 
-</div>
-
-<div class="ventanas">
-<form method="post" action="../../assets/php/realizar_venta.php">
-<input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
-<input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
-</form> 
 </div>
 
 <!-- LLenado de la tabla end-->
