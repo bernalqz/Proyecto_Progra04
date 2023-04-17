@@ -28,9 +28,9 @@ require '../../assets/php/dbconnection.php';
         }
 
         echo "<br><br>";
-        echo "<h3 >Jugadores totales: " .$total1;
+        echo "<h3>Jugadores totales: " .$total1;
         echo "<br><br>";
-        echo "Ventas totales: ₡" .$total2;
+        echo "Ventas totales: ₡" .$total2. "</h3>";
         echo "<br><br>";
 
     $con->close();

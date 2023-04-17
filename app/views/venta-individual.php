@@ -79,7 +79,7 @@ if($con){
 <input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
 <input type="number"  name="number" max="100" required></input>
 <br><br>
-<Label >Dinero a apostar:</Label>
+<Label>Dinero a apostar:</Label>
 <input name="amount" required type="number"></input><label> ₡</label><br><br>
 
 <input type="submit" class="btn" value="Agregar apuesta"></input>
@@ -163,14 +163,13 @@ $con->close();
 
 </div>
 
-<center>
+<div class="ventanas">
 <form method="post" action="../../assets/php/realizar_venta.php">
 <input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
 <input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
 <input type="submit" class="btn" value="Realizar la venta"></input>
 </form> 
-<a href="../../app/views/venta-de-tiempos.php" type="submit" class="fa-regular fa-arrow-left btn" style="color: #ffffff;"></a>
-</center>
+</div>
 
 <!-- LLenado de la tabla end-->
 <!--TABLA-->
