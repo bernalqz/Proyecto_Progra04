@@ -82,7 +82,8 @@ if($con){
 <Label>Dinero a apostar:</Label>
 <input name="amount" required type="number"></input><label> ₡</label><br><br>
 
-<input type="submit" class="btn" value="Agregar apuesta"></input>
+<input type="submit" class="btn" value="Agregar"></input>
+<input type="submit" class="btn" value="Vender"></input>
 </form> 
 </div>
 
@@ -167,7 +168,6 @@ $con->close();
 <form method="post" action="../../assets/php/realizar_venta.php">
 <input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
 <input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
-<input type="submit" class="btn" value="Realizar la venta"></input>
 </form> 
 </div>
 

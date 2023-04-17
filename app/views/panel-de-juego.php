@@ -22,7 +22,7 @@ if(isset($_GET['mensaje']))
   <h3 class="random_ball"><?php echo $Aleatorio ?></h3><br>
 </div>
 
-<a href="../../assets/php/numero_aleatorio.php"><button class="btn">Generar Aleatorio</button></a><br><br>
+<a href="../../assets/php/numero_aleatorio.php"><button class="btn">Generar aleatorio</button></a><br><br>
 
 <form action="../../assets/php/realizar_sorteo.php" method="POST">
 <label for="">Número ganador: </label>

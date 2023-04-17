@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/76ceaa8f89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.5">
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.2">
     
     <title>Tiempos</title>
 </head>
@@ -15,20 +15,17 @@
 <header type="text" name="hora" value="<?php echo $horaActual ?>"</header>
 
 <?php
-require '../../assets/php/dbconnection.php';
 
-$consulta_apuesta = 'SELECT * FROM apuestas';
-$datos_consulta = $con->query($consulta_apuesta);
-
+$tiempo_en_segundos = time();
 date_default_timezone_set("America/Mexico_City");
-$horaActual = date("H:i");
+$horaActual = date("h:i:s", $tiempo_en_segundos);
 
 echo $horaActual;
 
-if ($horaActual > 17) {
-	echo " ";
+if ($horaActual < 11) {
+	echo "<disabled='true'>";;
 } else {
-	echo " ";
+	echo "<disabled='false'>";
 }
 
 ?>
@@ -38,11 +35,7 @@ if ($horaActual > 17) {
 <img src="../../assets/dinero.png">
 </div>
 <div class="ganador">
-
-
 <img src="../../assets/ganador.png">
-
-
 </div>
 <div class="dos-tarjetas">
 <img src="../../assets/dos-tarjetas.png">
