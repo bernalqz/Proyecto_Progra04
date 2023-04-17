@@ -74,6 +74,10 @@ body{
 
 /*Side bar-end*/
 
+input{
+  padding-left: 5px;
+}
+
 .game{
 align-items: center;
 flex-direction: column;
@@ -332,14 +336,8 @@ overflow-x: hidden;
     position: relative;
     left: 125px;
     top: -22px;
-    color: #009879;
-    transition: 0.3s ease;
-    cursor: pointer;
+    color: #dadada;
     width: 20px;
-  }
-
-  header:hover {
-    color: #e9e9e9;
   }
 
   .dinero img{

@@ -64,7 +64,7 @@ $sql = "TRUNCATE TABLE apuestas_temp;";
 
     if($result)
     {
-        $mensaje="Venta a: ".$Name_gamer." registrada correctamente";
+        $mensaje="Venta a ".$Name_gamer." registrada correctamente";
         HEADER("Location: ../../app/views/venta-de-tiempos.php?mensaje=$mensaje");
     }
     else
@@ -75,13 +75,9 @@ $sql = "TRUNCATE TABLE apuestas_temp;";
                 window.history.go(-1);
             </script>
         ");
-    }   
+    } 
 
-
-
-
-
-
+ 
 
 }
 
