@@ -10,7 +10,7 @@ if(isset($_GET['mensaje']))
  {
    $Mensaje = $_GET['mensaje'];
    //echo $Mensaje; 
-   echo '<span class="good-msg">'.$Mensaje.'</span>';
+   echo '<span class="win-msg">'.$Mensaje.'</span>';
 
 }
 
@@ -132,7 +132,7 @@ if ($datos_consulta->num_rows>0){
             <form method="POST" action="../../assets/php/pagar_premio.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_bet'];?>">
               <input type="hidden" name="name" value="<?php echo $fila['Name_gamer_bet'];?>">
-		          <button class="sell-btn fa-solid fa-trophy" style="background-color:gold"></button>
+		          <button class="sell-btn fa-solid fa-trophy" style="background-color:goldenrod"></button>
             </form>    
             </td>
             

@@ -451,5 +451,16 @@ overflow-x: hidden;
   text-align: center;
 }
 
+.win-msg{
+  margin: 3px;
+  display: block;
+  background: goldenrod;
+  color:#fff;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 5px 0px;
+  text-align: center;
+}
+
 
  /*Alertas*/
