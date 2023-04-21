@@ -87,7 +87,7 @@ if($con){
 <form method="post" action="../../assets/php/realizar_venta.php">
 <input type="hidden" name="id" value="<?php echo $Id_gamer;?>">
 <input type="hidden" name="name" value="<?php echo $Name_gamer;?>">
-<input type="submit" class="btn" value="Vender número"></input>
+<input type="submit" class="btn" value="Realizar Venta"></input>
 </form>
 </div>
 

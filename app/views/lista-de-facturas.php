@@ -15,8 +15,8 @@
           <tr>
             <th># Factura</th>
             <th>Cliente</th>
-            <th>Apuestas</th>
-            <th>Id's</th>
+            <th>Cantidad</th>
+            <th>Id Cliente</th>
             <th>Eliminar</th>    
             <th>Imprimir</th>       
           </tr>
@@ -34,12 +34,31 @@ if ($datos_consulta->num_rows>0){
         $Id_gamer = $fila['Id_gamer_sales'];
         $Id_bet_sales = $fila['Id_bet_sales'];
 
+// Consulta el nobre del cliente por medio del ID
+$sql ="SELECT `Name_gamer` FROM `jugadores` WHERE `Id_gamer` = '$Id_gamer';";
+$result = $con->query($sql);
+$row = $result->fetch_assoc();
+$Name_gamer = $row['Name_gamer'];
+//------ end
+
+// Consulta la cantidad de apuestas en BD
+$sql = "SELECT COUNT(*) FROM apuestas WHERE Id_sales_bet = $Id " ;
+$resultado = $con->query($sql);
+if ($resultado === false) {
+  echo 'Error al ejecutar la consulta: ';
+  exit;
+}
+$filas = mysqli_fetch_row($resultado);
+$numero_registros = $filas[0];
+
+//
+
         ?>
          <tr>
             <td><?=$Id?></td>
+            <td><?=$Name_gamer?></td>
+            <td><?=$numero_registros?></td>
             <td><?=$Id_gamer?></td>
-            <td><?="sin data"?></td>
-            <td><?=$Id_bet_sales?></td>
             <td>
             <form method="post" action="../../assets/php/borrar_venta.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_sales'];?>">
