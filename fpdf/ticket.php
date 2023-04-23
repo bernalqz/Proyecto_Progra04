@@ -1,5 +1,11 @@
 <?php
 
+    require '../../assets/php/dbconnection.php';
+
+    $sql = "SELECT Name_gamer, Nick_gamer, Ced_gamer FROM jugadores";
+    $resultado = $con->query($sql);
+
+
 	# Incluyendo librerias necesarias #
     require "./code128.php";
 
@@ -30,9 +36,9 @@
     $pdf->Cell(0,5,utf8_decode("------------------------------------------------------"),0,0,'C');
     $pdf->Ln(8);
 
-    $pdf->MultiCell(0,5,utf8_decode("Cliente: Diego Vargas"),0,'C',false);
-    $pdf->MultiCell(0,5,utf8_decode("Cédula: 345-000-123"),0,'C',false);
-    $pdf->MultiCell(0,5,utf8_decode("Apuesta: 3.000"),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode("Cliente: Name_gamer"),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode("Cédula: Ced_gamer"),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode("Apuesta: Nick_gamer"),0,'C',false);
     $pdf->MultiCell(0,5,utf8_decode("Número: 45"),0,'C',false);
 
     $pdf->Ln(1);

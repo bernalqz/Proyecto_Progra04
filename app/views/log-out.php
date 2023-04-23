@@ -1,5 +1,10 @@
 <?php include "header.php"?>
 
-<h1>Log out</h1> 
+<?php
+session_start();
+session_destroy();
+header("Location:../../app/views/login.php")
+
+?>
 
 <?php include "footer.php"?>

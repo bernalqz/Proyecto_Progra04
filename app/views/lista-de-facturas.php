@@ -60,10 +60,8 @@ $numero_registros = $filas[0];
             <td><?=$numero_registros?></td>
             <td><?=$Id_gamer?></td>
             <td>
-            <form method="post" action="../../assets/php/borrar_venta.php">
               <input type="hidden" name="id" value="<?php echo $fila['Id_sales'];?>">
-		          <button class="delete-btn fa-solid fa-trash"></button>
-            </form>    
+		          <button class="delete-btn fa-solid fa-trash" id="open-modal2<?=$fila['Id_sales']?>"></button>
             </td>
             <td>
             <form method="post" action="../../fpdf/ticket.php" target="_blank">
@@ -72,6 +70,29 @@ $numero_registros = $filas[0];
             </form>    
             </td>
           </tr>
+
+<dialog class="pop-up-alert" id="modal-wind2<?=$fila['Id_sales']?>">
+
+<form action="../../assets/php/borrar_venta.php" method="POST" method="dialog">
+
+<h2>Desea eliminar la factura?</h2>
+
+<input type="hidden" name="id" value="<?php echo $fila['Id_sales'];?>">
+<button type="submit" class="btn-pop">Eliminar</button>
+
+</form>
+
+<button class="btn-pop" id="cerrar-modal2<?=$fila['Id_sales']?>">Cancelar</button>
+
+</dialog>  
+
+<script>
+const btn_open_modal2<?=$fila['Id_sales']?> = document.querySelector("#open-modal2<?=$fila['Id_sales']?>");
+const btn_close_modal2<?=$fila['Id_sales']?> = document.querySelector("#cerrar-modal2<?=$fila['Id_sales']?>")
+const modal_eliminar_factura<?=$fila['Id_sales']?> = document.querySelector("#modal-wind2<?=$fila['Id_sales']?>")
+btn_open_modal2<?=$fila['Id_sales']?>.addEventListener("click",()=>{modal_eliminar_factura<?=$fila['Id_sales']?>.showModal()})
+btn_close_modal2<?=$fila['Id_sales']?>.addEventListener("click",()=>{modal_eliminar_factura<?=$fila['Id_sales']?>.close()})
+</script>
 
 <?php
      } // aqui finaliza el while
