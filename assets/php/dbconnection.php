@@ -3,7 +3,7 @@
 $Server = "localhost";
     $User = "root";
     $Password = "Admin";
-    $DB = "proyecto_progra04";
+    $DB = "v2proyecto_progra04";
 
     $con = new mysqli($Server, $User, $Password, $DB);
 

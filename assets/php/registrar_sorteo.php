@@ -10,7 +10,7 @@
 
 require 'dbconnection.php';
 
-
+//Crea el sorteo
         $sql = "INSERT INTO sorteos (Name_raffle, Times_raffle, Max_raffle, Min_raffle)
                 VALUES ('$NombreSorteo', '$VecesSorteo', '$MaxSorteo ', '$MinSorteo ' )";
 
@@ -29,7 +29,7 @@ $sql ="SELECT `Id_raffle` FROM `sorteos` WHERE `Name_raffle` = '$NombreSorteo';"
 $result = $con->query($sql);
 $row = $result->fetch_assoc();
 $Id_raffle = $row['Id_raffle'];
-//echo $Id_raffle;
+echo $Id_raffle;
 
 // Un ciclo para crear los 100 numeros del sorteo
 $i=0;
