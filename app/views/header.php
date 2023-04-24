@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/76ceaa8f89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.3">
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.4">
     
     <title>Tiempos</title>
 </head>
 <body>
 <div class="logo">
 <img src="../../assets/lotto.png">
-<header type="text" name="hora" id="time"></header>
+<header type="text" name="hora" id="time">00:00:00</header>
 
 <script>
 const time = document.getElementById('time');

@@ -346,8 +346,9 @@ overflow-x: hidden;
     left: 128px;
     top: -22px;
     color: #dadada;
-    width: 20px;
+    width: 100%;
     text-overflow: ellipsis;
+    overflow: hidden;
     white-space: nowrap;
   }
 
