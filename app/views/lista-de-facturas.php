@@ -17,8 +17,8 @@
             <th>Cliente</th>
             <th>Cantidad</th>
             <th>Id Cliente</th>
-            <th>Eliminar</th>    
-            <th>Imprimir</th>       
+            <th>Imprimir</th>    
+            <th>Eliminar</th>       
           </tr>
         </thead>
         <tbody>
@@ -62,7 +62,7 @@ $numero_registros = $filas[0];
             <td>
             <form method="post" action="../../fpdf/ticket.php" target="_blank">
               <input type="hidden" name="id" value="<?php echo $fila['Id_sales'];?>">
-              <button class="print-btn fa-solid fa-print"></button>
+              <button class="print-btn fa-regular fa-file-pdf"></button>
             </form>    
             </td>
             <td>
