@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/76ceaa8f89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.4">
-    
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.6">
+
     <title>Tiempos</title>
 </head>
 <body>

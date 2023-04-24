@@ -58,12 +58,11 @@ $resultado = mysqli_query($con, $consulta);
     $pdf->Cell(0,5,utf8_decode("-------------------------------------------------------------------"),0,0,'C');
     $pdf->Ln(4);
 
-    # Tabla de productos #
     $pdf->Cell(39,5,utf8_decode("Precio"),0,0,'C');
     $pdf->Cell(28,5,utf8_decode("Total"),0,0,'C');
 
     $pdf->Ln(4);
-    $pdf->Cell(72,5,utf8_decode("-------------------------------------------------------------------"),0,0,'C');
+    $pdf->Cell(0,5,utf8_decode("-------------------------------------------------------------------"),0,0,'C');
     $pdf->Ln(5);
 
     /*----------  Detalles de la tabla  ----------*/
