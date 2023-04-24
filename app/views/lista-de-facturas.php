@@ -60,14 +60,13 @@ $numero_registros = $filas[0];
             <td><?=$numero_registros?></td>
             <td><?=$Id_gamer?></td>
             <td>
-              <input type="hidden" name="id" value="<?php echo $fila['Id_sales'];?>">
-		          <button class="delete-btn fa-solid fa-trash" id="open-modal2<?=$fila['Id_sales']?>"></button>
-            </td>
-            <td>
             <form method="post" action="../../fpdf/ticket.php" target="_blank">
               <input type="hidden" name="id" value="<?php echo $fila['Id_sales'];?>">
               <button class="print-btn fa-solid fa-print"></button>
             </form>    
+            </td>
+            <td>
+		          <button class="delete-btn fa-solid fa-trash" id="open-modal2<?=$fila['Id_sales']?>"></button>
             </td>
           </tr>
 
