@@ -4,10 +4,14 @@
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/styleLogin.css?ver=1.2">
 
+<script language="JavaScript">
+javascript:window.history.forward(1); 
+</script>
+
 	<title>video de loteria</title>
 </head>
-<body>
 
+<body>
 	<div class="video-container">
 		<form action="" method="post">
 			<div class="top-header">
@@ -67,3 +71,4 @@ if(isset($_POST['submit'])){
 };
 $con->close();
 ?>
+
