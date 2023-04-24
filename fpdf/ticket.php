@@ -1,9 +1,17 @@
 <?php
+$id = $_POST["id"];
+
+$con=mysqli_connect("localhost","root","Admin","Proyecto_Progra04");
+
+$consulta = "SELECT * FROM apuestas where Id_bet = $id";
+$resultado = mysqli_query($con, $consulta);
+
+
 
 	# Incluyendo librerias necesarias #
     require "./code128.php";
 
-    $pdf = new PDF_Code128('P','mm',array(80,200));
+    $pdf = new PDF_Code128('P','mm',array(80,195));
     $pdf->SetMargins(4,10,4);
     $pdf->AddPage();
     
@@ -23,16 +31,17 @@
 
     $pdf->MultiCell(0,5,utf8_decode("Fecha: ".date("d/m/Y", strtotime("13-09-2023"))." ".date("h:s A")),0,'C',false);
     $pdf->SetFont('Arial','B',10);
-    $pdf->MultiCell(0,5,utf8_decode(strtoupper("Ticket # 1")),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode(strtoupper("Factura # " .$id)),0,'C',false);
     $pdf->SetFont('Arial','',9);
 
     $pdf->Ln(1);
     $pdf->Cell(0,5,utf8_decode("------------------------------------------------------"),0,0,'C');
     $pdf->Ln(8);
 
-    $pdf->MultiCell(0,5,utf8_decode("Cliente: Name_gamer"),0,'C',false);
-    $pdf->MultiCell(0,5,utf8_decode("Cédula: Ced_gamer"),0,'C',false);
-    $pdf->MultiCell(0,5,utf8_decode("Apuesta: Nick_gamer"),0,'C',false);
+
+    $pdf->MultiCell(0,5,utf8_decode("Cliente: Pablo"),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode("Cédula: 50-674-123"),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode("Apuesta: Coco"),0,'C',false);
     $pdf->MultiCell(0,5,utf8_decode("Número: 45"),0,'C',false);
 
     $pdf->Ln(1);
@@ -62,13 +71,15 @@
     $pdf->SetFont('Arial','B',9);
     $pdf->Cell(0,7,utf8_decode("Gracias por su compra"),'',0,'C');
 
-    $pdf->Ln(20);
+    $pdf->Ln(18);
 
     # Codigo de barras #
     $pdf->Code128(5,$pdf->GetY(),"COD000001V0001",70,20);
     $pdf->SetXY(0,$pdf->GetY()+21);
-    $pdf->SetFont('Arial','',14);
+    $pdf->SetFont('Arial','',13);
     $pdf->MultiCell(0,5,utf8_decode("COD000001V0001"),0,'C',false);
     
     # Nombre del archivo PDF #
     $pdf->Output("I","Tickets.pdf",true);
+    ?>
+  

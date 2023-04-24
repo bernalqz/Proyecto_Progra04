@@ -109,7 +109,4 @@ $con->close();
 <!--TABLA-->
 
 
-
-
-
 <?php include "footer.php"?>
