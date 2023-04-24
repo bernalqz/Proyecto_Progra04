@@ -7,7 +7,6 @@
 </div> 
 
 <!--TABLA-->
-<form method="post" action="../../fpdf/ticket.php" target="_blank">
 <div class="tabla-contenedor3">
 
 <table class="content-table">
@@ -65,6 +64,7 @@ $numero_registros = $filas[0];
 		          <button class="delete-btn fa-solid fa-trash" id="open-modal2<?=$fila['Id_sales']?>"></button>
             </td>
             <td>
+            <form method="post" action="../../fpdf/ticket.php" target="_blank">
               <input type="hidden" name="id" value="<?php echo $fila['Id_sales'];?>">
               <button class="print-btn fa-solid fa-print"></button>
             </form>    
