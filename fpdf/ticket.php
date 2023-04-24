@@ -13,7 +13,6 @@ $resultado = mysqli_query($con, $consulta);
             $raffle_print = $fila['Name_raffle_bet'];
             $name_print = $fila['Name_gamer_bet'];
             $time_print = $fila['Time_bet'];
-            $cantidad_print = $fila['Active'];
             $money_print = $fila['Money_bet'];
             $number_print = $fila['Number_bet'];
         }
@@ -60,8 +59,7 @@ $resultado = mysqli_query($con, $consulta);
     $pdf->Ln(4);
 
     # Tabla de productos #
-    $pdf->Cell(10,5,utf8_decode("Cant." ),0,0,'C');
-    $pdf->Cell(19,5,utf8_decode("Precio"),0,0,'C');
+    $pdf->Cell(39,5,utf8_decode("Precio"),0,0,'C');
     $pdf->Cell(28,5,utf8_decode("Total"),0,0,'C');
 
     $pdf->Ln(4);
@@ -69,9 +67,7 @@ $resultado = mysqli_query($con, $consulta);
     $pdf->Ln(5);
 
     /*----------  Detalles de la tabla  ----------*/
-
-    $pdf->Cell(10,4,utf8_decode("" .$cantidad_print),0,0,'C');
-    $pdf->Cell(19,4,utf8_decode("" .$money_print),0,0,'C');
+    $pdf->Cell(39,4,utf8_decode("" .$money_print),0,0,'C');
     $pdf->Cell(28,4,utf8_decode("" .$money_print),0,0,'C');
     /*----------  Fin Detalles de la tabla  ----------*/
 
