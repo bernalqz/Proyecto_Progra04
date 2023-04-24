@@ -3,12 +3,10 @@ $id = $_POST["id"];
 
 $con=mysqli_connect("localhost","root","Admin","Proyecto_Progra04");
 
-$consulta = "SELECT * FROM apuestas where Id_bet = $id";
+$consulta = "SELECT * FROM apuestas where Id_sales_bet = $id";
 $resultado = mysqli_query($con, $consulta);
 
-
-    $consulta_apuesta = 'SELECT * FROM apuestas';
-    $datos_consulta = $con->query($consulta_apuesta);
+    $datos_consulta = $con->query($consulta);
     if ($datos_consulta->num_rows>0){
         $contador=0;
         while($fila=$datos_consulta->fetch_assoc()){
@@ -18,16 +16,6 @@ $resultado = mysqli_query($con, $consulta);
             $cantidad_print = $fila['Active'];
             $money_print = $fila['Money_bet'];
             $number_print = $fila['Number_bet'];
-        }
-    }
-
-    $consulta_apuesta = 'SELECT * FROM jugadores';
-    $datos_consulta = $con->query($consulta_apuesta);
-    if ($datos_consulta->num_rows>0){
-        $contador=0;
-        while($fila=$datos_consulta->fetch_assoc()){
-            $nick_print = $fila['Nick_gamer'];
-            $ced_print = $fila['Ced_gamer'];
         }
     }
 
@@ -43,7 +31,7 @@ $resultado = mysqli_query($con, $consulta);
     $pdf->SetFont('Arial','B',13);
     $pdf->SetTextColor(0,0,0);
     $pdf->MultiCell(0,5,utf8_decode(strtoupper("Sorteo.com")),0,'C',false);
-    $pdf->Ln(5);
+    $pdf->Ln(10);
     $pdf->SetFont('Arial','',9);
     $pdf->MultiCell(0,5,utf8_decode("Dirección: San José, Costa Rica"),0,'C',false);
     $pdf->MultiCell(0,5,utf8_decode("Email: sorteo@gmail.com"),0,'C',false);
@@ -65,11 +53,9 @@ $resultado = mysqli_query($con, $consulta);
     $pdf->MultiCell(0,5,utf8_decode("Sorteo: " .$raffle_print),0,'C',false);
     $pdf->SetFont('Arial','',9);
     $pdf->MultiCell(0,5,utf8_decode("Cliente: " .$name_print),0,'C',false);
-    $pdf->MultiCell(0,5,utf8_decode("Apodo: " .$nick_print),0,'C',false);
-    $pdf->MultiCell(0,5,utf8_decode("Cédula: " .$ced_print),0,'C',false);
     $pdf->MultiCell(0,5,utf8_decode("Número: " .$number_print),0,'C',false);
 
-    $pdf->Ln(1);
+    $pdf->Ln(3);
     $pdf->Cell(0,5,utf8_decode("-------------------------------------------------------------------"),0,0,'C');
     $pdf->Ln(4);
 
@@ -89,7 +75,7 @@ $resultado = mysqli_query($con, $consulta);
     $pdf->Cell(28,4,utf8_decode("" .$money_print),0,0,'C');
     /*----------  Fin Detalles de la tabla  ----------*/
 
-    $pdf->Ln(20);
+    $pdf->Ln(22);
 
     $pdf->MultiCell(0,5,utf8_decode("*** Para poder realizar un reclamo o devolución debe de presentar este ticket ***"),0,'C',false);
 

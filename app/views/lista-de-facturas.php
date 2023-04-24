@@ -7,7 +7,6 @@
 </div> 
 
 <!--TABLA-->
-<form method="post" action="../../fpdf/ticket.php" target="_blank">
 <div class="tabla-contenedor3">
 
 <table class="content-table">
