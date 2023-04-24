@@ -7,11 +7,34 @@ $consulta = "SELECT * FROM apuestas where Id_bet = $id";
 $resultado = mysqli_query($con, $consulta);
 
 
+    $consulta_apuesta = 'SELECT * FROM apuestas';
+    $datos_consulta = $con->query($consulta_apuesta);
+    if ($datos_consulta->num_rows>0){
+        $contador=0;
+        while($fila=$datos_consulta->fetch_assoc()){
+            $raffle_print = $fila['Name_raffle_bet'];
+            $name_print = $fila['Name_gamer_bet'];
+            $time_print = $fila['Time_bet'];
+            $cantidad_print = $fila['Active'];
+            $money_print = $fila['Money_bet'];
+            $number_print = $fila['Number_bet'];
+        }
+    }
+
+    $consulta_apuesta = 'SELECT * FROM jugadores';
+    $datos_consulta = $con->query($consulta_apuesta);
+    if ($datos_consulta->num_rows>0){
+        $contador=0;
+        while($fila=$datos_consulta->fetch_assoc()){
+            $nick_print = $fila['Nick_gamer'];
+            $ced_print = $fila['Ced_gamer'];
+        }
+    }
 
 	# Incluyendo librerias necesarias #
     require "./code128.php";
 
-    $pdf = new PDF_Code128('P','mm',array(80,195));
+    $pdf = new PDF_Code128('P','mm',array(80,200));
     $pdf->SetMargins(4,10,4);
     $pdf->AddPage();
     
@@ -29,7 +52,7 @@ $resultado = mysqli_query($con, $consulta);
     $pdf->Cell(0,5,utf8_decode("------------------------------------------------------"),0,0,'C');
     $pdf->Ln(8);
 
-    $pdf->MultiCell(0,5,utf8_decode("Fecha: ".date("d/m/Y", strtotime("13-09-2023"))." ".date("h:s A")),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode("Fecha: " .$time_print),0,'C',false);
     $pdf->SetFont('Arial','B',10);
     $pdf->MultiCell(0,5,utf8_decode(strtoupper("Factura # " .$id)),0,'C',false);
     $pdf->SetFont('Arial','',9);
@@ -38,18 +61,20 @@ $resultado = mysqli_query($con, $consulta);
     $pdf->Cell(0,5,utf8_decode("------------------------------------------------------"),0,0,'C');
     $pdf->Ln(8);
 
-
-    $pdf->MultiCell(0,5,utf8_decode("Cliente: Pablo"),0,'C',false);
-    $pdf->MultiCell(0,5,utf8_decode("Cédula: 50-674-123"),0,'C',false);
-    $pdf->MultiCell(0,5,utf8_decode("Apuesta: Coco"),0,'C',false);
-    $pdf->MultiCell(0,5,utf8_decode("Número: 45"),0,'C',false);
+    $pdf->SetFont('Arial','B',9);
+    $pdf->MultiCell(0,5,utf8_decode("Sorteo: " .$raffle_print),0,'C',false);
+    $pdf->SetFont('Arial','',9);
+    $pdf->MultiCell(0,5,utf8_decode("Cliente: " .$name_print),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode("Apodo: " .$nick_print),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode("Cédula: " .$ced_print),0,'C',false);
+    $pdf->MultiCell(0,5,utf8_decode("Número: " .$number_print),0,'C',false);
 
     $pdf->Ln(1);
     $pdf->Cell(0,5,utf8_decode("-------------------------------------------------------------------"),0,0,'C');
     $pdf->Ln(4);
 
     # Tabla de productos #
-    $pdf->Cell(10,5,utf8_decode("Cant."),0,0,'C');
+    $pdf->Cell(10,5,utf8_decode("Cant." ),0,0,'C');
     $pdf->Cell(19,5,utf8_decode("Precio"),0,0,'C');
     $pdf->Cell(28,5,utf8_decode("Total"),0,0,'C');
 
@@ -59,9 +84,9 @@ $resultado = mysqli_query($con, $consulta);
 
     /*----------  Detalles de la tabla  ----------*/
 
-    $pdf->Cell(10,4,utf8_decode("1"),0,0,'C');
-    $pdf->Cell(19,4,utf8_decode(" 3.000"),0,0,'C');
-    $pdf->Cell(28,4,utf8_decode(" 3.000"),0,0,'C');
+    $pdf->Cell(10,4,utf8_decode("" .$cantidad_print),0,0,'C');
+    $pdf->Cell(19,4,utf8_decode("" .$money_print),0,0,'C');
+    $pdf->Cell(28,4,utf8_decode("" .$money_print),0,0,'C');
     /*----------  Fin Detalles de la tabla  ----------*/
 
     $pdf->Ln(20);
