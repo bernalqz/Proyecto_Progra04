@@ -79,8 +79,8 @@ $resultado = mysqli_query($con, $consulta);
 
     $pdf->MultiCell(0,5,utf8_decode("*** Para poder realizar un reclamo o devolución debe de presentar este ticket ***"),0,'C',false);
 
-    $pdf->SetFont('Arial','B',9);
-    $pdf->Cell(0,7,utf8_decode("Gracias por su compra"),'',0,'C');
+    $pdf->SetFont('Arial','B',11);
+    $pdf->Cell(0,7,utf8_decode("Buena suerte!"),'',0,'C');
 
     $pdf->Ln(18);
 
