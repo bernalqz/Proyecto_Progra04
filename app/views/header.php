@@ -12,7 +12,7 @@
 <body>
 <div class="logo">
 <img src="../../assets/lotto.png">
-<header type="text" name="hora" id="time">00:00:00</header>
+<header type="text" name="hora" id="time">Sorteo.com</header>
 
 <script>
 const time = document.getElementById('time');
