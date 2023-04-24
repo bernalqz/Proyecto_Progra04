@@ -5,30 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/76ceaa8f89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.6">
+    <link rel="stylesheet" href="../../assets/css/style.css?ver=1.3">
     
     <title>Tiempos</title>
 </head>
 <body>
 <div class="logo">
 <img src="../../assets/lotto.png">
-<header type="text" name="hora" value="<?php echo $horaActual ?>"</header>
+<header type="text" name="hora" id="time"></header>
 
-<?php
+<script>
+const time = document.getElementById('time');
 
-$tiempo_en_segundos = time();
-date_default_timezone_set("America/Mexico_City");
-$horaActual = date("h:i:s", $tiempo_en_segundos);
+const interval = setInterval(() => {
 
-echo $horaActual;
+    const local = new Date();
+    
+    time.innerHTML = local.toLocaleTimeString('en-US');
 
-if ($horaActual < 11) {
-	echo "<disabled='true'>";;
-} else {
-	echo "<disabled='false'>";
-}
-
-?>
+}, 1000);
+</script>
 
 </div>
 <div class="dinero">

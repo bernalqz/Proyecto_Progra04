@@ -340,13 +340,15 @@ overflow-x: hidden;
   }
 
   header{
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     position: relative;
-    left: 125px;
+    left: 128px;
     top: -22px;
     color: #dadada;
     width: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .dinero img{

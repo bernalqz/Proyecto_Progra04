@@ -16,21 +16,17 @@ require '../../assets/php/dbconnection.php';
 
     $consulta_apuesta = 'SELECT * FROM apuestas';
     $datos_consulta = $con->query($consulta_apuesta);
-     
-      $total1 = 0;
-      $total2 = 0;
+
+      $total = 0;
     
         while($fila = $datos_consulta->fetch_assoc()){
           
-          $total1 = $fila['Id_bet'];
-          $total2 = $total2 + $fila['Money_bet'];
+          $total = $total + $fila['Money_bet'];
 
         }
 
         echo "<br><br>";
-        echo "<h3>Jugadores totales: " .$total1;
-        echo "<br><br>";
-        echo "Ventas totales: ₡" .$total2. "</h3>";
+        echo "<h3>Ventas totales: ₡" .$total. "</h3>";
         echo "<br><br>";
 
     $con->close();
