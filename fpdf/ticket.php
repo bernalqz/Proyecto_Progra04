@@ -1,11 +1,5 @@
 <?php
 
-    require '../../assets/php/dbconnection.php';
-
-    $sql = "SELECT Name_gamer, Nick_gamer, Ced_gamer FROM jugadores";
-    $resultado = $con->query($sql);
-
-
 	# Incluyendo librerias necesarias #
     require "./code128.php";
 

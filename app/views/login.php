@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" type="text/css" href="../../assets/css/styleLogin.css?ver=1.6">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/styleLogin.css?ver=1.2">
 
 	<title>video de loteria</title>
 </head>

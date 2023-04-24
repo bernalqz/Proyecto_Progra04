@@ -33,9 +33,6 @@ $Times_raffle = $row['Times_raffle'];
 //------ end
 
 
-
-
-
 //<!--Validación de restricciones de apuesta consulta restricciones:
 
 $sql ="SELECT * FROM `numeros` WHERE `Id_raffle_number` = '$Id_raffle' AND `Number_number` = '$Numero';";
@@ -53,7 +50,7 @@ if($Dinero > $Maxbet_number)
         header("Location: ../../app/views/venta-individual.php?mensaje=$mensaje");
 }
 
-elseif ($Dinero < $Minbet_number)
+else if ($Dinero < $Minbet_number)
 {
         $mensaje = "Para el número ".$Numero.", la cantidad de ₡".$Dinero ." ingresada no llega al mínimo de ₡"
         .$Minbet_number." establecido en el Sorteo ".$Seleccion_raffle;
@@ -64,7 +61,6 @@ elseif ($Dinero < $Minbet_number)
 else{
 
 //echo "La apuesta se puede realizar";
-
 
 $sql="INSERT INTO `apuestas_temp`(`Name_gamer_temp`, `Id_raffle_bet_temp`,`Times_raffle_temp`, `Name_raffle_temp`,`Id_number_bet_temp`,`Number_temp`, `Money_bet_temp`,`Active_temp`) 
 VALUES ('$Name_gamer','$Id_raffle','$Times_raffle','$Seleccion_raffle','$IdNumero','$Numero','$Dinero','1')";

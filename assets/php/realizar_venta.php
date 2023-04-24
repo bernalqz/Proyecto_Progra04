@@ -21,7 +21,7 @@ $filas = mysqli_fetch_row($resultado);
 $numero_registros = $filas[0];
 
 if ($numero_registros == 0) {
-    $mensaje ="Debe de realizar una venta al menos!";
+    $mensaje ="Debe de realizar una venta al menos";
     header("Location: ../../app/views/venta-individual.php?mensaje=$mensaje");
 
 } 
